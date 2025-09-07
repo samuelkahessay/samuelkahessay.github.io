@@ -3,99 +3,554 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonora - Modern iOS Voice Memo App with AI Analysis</title>
-    <meta name="description" content="Sonora is a sophisticated iOS voice memo app with AI-powered analysis, Live Activities integration, and native SwiftUI design. Record, transcribe, and analyze voice memos with intelligent insights.">
-    <meta name="keywords" content="iOS app, voice memo, AI analysis, transcription, SwiftUI, Live Activities, Dynamic Island, iPhone">
-    <meta name="author" content="Sonora">
+    <title>Sonora — Voice Memos</title>
+    <meta name="description" content="Record short voice memos with optional AI summaries. Includes Live Activities, Dynamic Island, and native iOS design.">
+    <meta name="keywords" content="iOS app, voice memo, AI analysis, transcription, SwiftUI, Live Activities, Dynamic Island, iPhone, Sonora">
+    <meta name="author" content="Samuel Kahessay">
     
-    <!-- App Store Connect Meta Tags -->
-    <meta name="apple-itunes-app" content="app-id=SONORA_APP_ID">
-    <meta property="og:title" content="Sonora - Modern iOS Voice Memo App with AI Analysis">
-    <meta property="og:description" content="Record 3-minute voice memos with AI-powered transcription and analysis. Features Live Activities, Dynamic Island integration, and native iOS design.">
+    <!-- App Store Connect Meta Tags (add your app id when available) -->
+    <!-- <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID"> -->
+    <meta property="og:title" content="Sonora — Voice Memos">
+    <meta property="og:description" content="Record voice memos with optional AI summaries. Live Activities and Dynamic Island support.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://samuelkahessay.github.io/sonora/">
     <meta property="og:site_name" content="Sonora">
     
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sonora - Modern iOS Voice Memo App with AI Analysis">
-    <meta name="twitter:description" content="Record 3-minute voice memos with AI-powered transcription and analysis. Features Live Activities, Dynamic Island integration, and native iOS design.">
+    <meta name="twitter:title" content="Sonora — Voice Memos">
+    <meta name="twitter:description" content="Record voice memos with optional AI summaries. Live Activities supported.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="../style.css">
+    <!-- Enhanced Styles for Sonora -->
     <style>
-        /* Sonora-specific styling enhancements */
+        /* Enhanced dawn/dusk theme variables with improved legibility */
         :root {
-            --sonora-primary: #007AFF; /* iOS system blue */
-            --sonora-secondary: #5856D6; /* iOS system purple */
-            --sonora-accent: #FF9500; /* iOS system orange */
-            --ios-gray: #8E8E93;
-            --ios-light-gray: #F2F2F7;
-            --ios-dark-gray: #1C1C1E;
-            --recording-red: #FF3B30;
+            /* Dawn/Sunrise Light Theme - Enhanced for legibility */
+            --primary-color: #E85D00;           /* Stronger Orange for better contrast */
+            --primary-hover: #CC5200;          /* Deeper Orange */
+            --accent-color: #E91E63;           /* Stronger Pink */
+            --secondary-color: #2196F3;        /* Stronger Blue */
+            --text-primary: #1A1A1A;           /* Darker for better readability */
+            --text-secondary: #424242;         /* Stronger secondary text */
+            --text-muted: #616161;             /* Less muted for accessibility */
+            --bg-primary: #FAFAFA;             /* Subtle off-white */
+            --bg-secondary: #F5F5F5;           /* Light gray */
+            --bg-tertiary: #EEEEEE;            /* Card backgrounds */
+            --border-color: #E0E0E0;           /* Subtle borders */
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(224, 224, 224, 0.6);
+            
+            /* Improved gradients for better legibility */
+            --gradient-primary: linear-gradient(135deg, #E85D00 0%, #E91E63 100%);
+            --gradient-hero: linear-gradient(135deg, #F5F5F5 0%, #FAFAFA 100%);
+            --gradient-card: linear-gradient(135deg, rgba(232, 93, 0, 0.03) 0%, rgba(233, 30, 99, 0.03) 100%);
+            --gradient-text: linear-gradient(135deg, #E85D00 0%, #E91E63 100%);
+            
+            /* Modern shadows */
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-large: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+            --glow-effect: 0 0 0 3px rgba(232, 93, 0, 0.1);
+            
+            /* Smooth transitions */
+            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
-        
-        /* Override primary color for Sonora branding */
-        .hero {
-            background: linear-gradient(135deg, var(--sonora-primary) 0%, var(--sonora-secondary) 100%);
+
+        [data-theme="dark"] {
+            --primary-color: #FF7043;
+            --primary-hover: #FF5722;
+            --accent-color: #AB47BC;
+            --secondary-color: #42A5F5;
+            --text-primary: #FFFFFF;
+            --text-secondary: #E0E0E0;
+            --text-muted: #BDBDBD;
+            --bg-primary: #121212;
+            --bg-secondary: #1E1E1E;
+            --bg-tertiary: #2A2A2A;
+            --border-color: #333333;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --glass-bg: rgba(30, 30, 30, 0.8);
+            --glass-border: rgba(51, 51, 51, 0.6);
+            
+            /* Dark gradients */
+            --gradient-primary: linear-gradient(135deg, #FF7043 0%, #AB47BC 100%);
+            --gradient-hero: linear-gradient(135deg, #1E1E1E 0%, #121212 100%);
+            --gradient-card: linear-gradient(135deg, rgba(255, 112, 67, 0.05) 0%, rgba(171, 71, 188, 0.05) 100%);
+            --gradient-text: linear-gradient(135deg, #FF7043 0%, #AB47BC 100%);
+            
+            /* Dark shadows */
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+            --shadow-large: 0 10px 15px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3);
+            --glow-effect: 0 0 0 3px rgba(255, 112, 67, 0.2);
         }
-        
-        /* iOS-inspired cards */
-        .feature-card {
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
             background: var(--bg-primary);
-            border-radius: 16px;
+            transition: var(--transition-smooth);
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+
+        /* Improved typography for better legibility */
+        .sonora-page h1, .sonora-page h2, .sonora-page h3, .sonora-page h4, .sonora-page h5, .sonora-page h6 {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* Fallback for better accessibility */
+        @supports not (-webkit-background-clip: text) {
+            .sonora-page h1, .sonora-page h2, .sonora-page h3, .sonora-page h4, .sonora-page h5, .sonora-page h6 {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        a:hover, a:focus {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        /* Enhanced Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 100;
+            transition: var(--transition-smooth);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        /* Enhanced Logo */
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        /* Fallback for logo */
+        @supports not (-webkit-background-clip: text) {
+            .logo {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Enhanced Theme Toggle */
+        .theme-toggle {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: var(--glow-effect);
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card);
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
             padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
         }
-        
-        [data-theme="dark"] .feature-card {
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 0.9;
+        }
+
+        /* Fallback for hero h1 */
+        @supports not (-webkit-background-clip: text) {
+            .hero h1 {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        /* Enhanced CTA Buttons */
+        .btn-primary, .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 2.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            font-size: 1.1rem;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            border-color: var(--glass-border);
+            backdrop-filter: blur(20px);
+        }
+
+        .btn-secondary {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .btn-primary:hover {
+            border-color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .main {
+            background: var(--bg-primary);
+        }
+
+        .section {
+            padding: 6rem 0;
+            position: relative;
+            scroll-margin-top: 100px;
+        }
+
+        .section:nth-child(even) {
             background: var(--bg-secondary);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
-        
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 4rem;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        /* Fallback for section title */
+        @supports not (-webkit-background-clip: text) {
+            .section-title {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* Enhanced Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
         .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-large);
+            border-color: var(--primary-color);
         }
-        
-        /* Feature icons */
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
         .feature-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, var(--sonora-primary), var(--sonora-secondary));
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: white;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition-smooth);
         }
-        
-        /* App Store button styling */
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Fallback for feature card h3 */
+        @supports not (-webkit-background-clip: text) {
+            .feature-card h3 {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Technical Excellence Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Fallback for stat number */
+        @supports not (-webkit-background-clip: text) {
+            .stat-number {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Download Section */
+        .download-section {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card);
+            opacity: 0.5;
+        }
+
+        .download-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
         .app-store-button {
-            background: var(--text-primary);
-            color: var(--bg-primary);
-            padding: 1rem 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1.25rem 2.5rem;
             border-radius: 12px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition);
-            border: 2px solid var(--text-primary);
+            gap: 0.75rem;
+            transition: var(--transition-smooth);
+            border: none;
+            box-shadow: var(--shadow-medium);
+            font-size: 1.125rem;
         }
-        
+
         .app-store-button:hover {
-            background: transparent;
-            color: var(--text-primary);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-large);
         }
 
         .app-store-button.is-disabled {
@@ -104,126 +559,165 @@
             cursor: not-allowed;
         }
 
-        /* Hero CTA buttons */
-        .btn-primary, .btn-secondary {
-            text-decoration: none;
-            padding: 0.8rem 1.2rem;
-            border-radius: 12px;
-            font-weight: 600;
-            border: 2px solid rgba(255,255,255,0.3);
-            backdrop-filter: blur(10px);
+        /* Enhanced Footer */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 0 2rem;
+            position: relative;
         }
 
-        .btn-primary {
-            background: rgba(255,255,255,0.2);
-            color: #fff;
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient-primary);
         }
 
-        .btn-secondary {
-            background: #fff;
-            color: var(--sonora-primary);
-            border-color: #fff;
-        }
-
-        .btn-primary:hover, .btn-secondary:hover {
-            transform: translateY(-2px);
-            transition: var(--transition);
-        }
-        
-        /* Privacy-focused section */
-        .privacy-badge {
-            background: rgba(52, 199, 89, 0.1);
-            color: #34C759;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        
-        /* Features grid */
-        .features-grid {
+        .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin: 3rem 0;
+            margin-bottom: 2rem;
         }
-        
-        /* Responsive adjustments */
+
+        .footer-section h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Fallback for footer h4 */
+        @supports not (-webkit-background-clip: text) {
+            .footer-section h4 {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        /* Enhanced Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced Responsive Design */
         @media (max-width: 768px) {
+            .hero-content {
+                padding: 1rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .section-title {
+                margin-bottom: 3rem;
+            }
+            
             .features-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 2rem;
             }
             
             .feature-card {
-                padding: 1.5rem;
+                padding: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .download-section {
+                padding: 3rem 1.5rem;
             }
         }
-        
-        /* Section styling */
-        .section {
-            padding: 4rem 0;
+
+        @media (max-width: 480px) {
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .theme-toggle {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
-        
-        .section-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+
+        /* Enhanced Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
-        
-        .section-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            text-align: center;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Download section */
-        .download-section {
-            background: var(--bg-secondary);
-            text-align: center;
-            padding: 4rem 2rem;
-            border-radius: 24px;
-            margin: 2rem 0;
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--bg-secondary);
-            padding: 3rem 0 2rem;
-            margin-top: 4rem;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: var(--sonora-primary);
-        }
-        
-        .copyright {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.875rem;
+
+        /* Enhanced Focus States */
+        .theme-toggle:focus,
+        .btn-primary:focus,
+        .btn-secondary:focus,
+        .app-store-button:focus,
+        .feature-card:focus {
+            outline: 3px solid var(--primary-color);
+            outline-offset: 2px;
         }
     </style>
 </head>
@@ -231,8 +725,8 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav container">
-            <a href="#" class="logo">Sonora</a>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            <a href="index.html" class="logo">Sonora</a>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle between dawn and dusk themes">
                 <span id="theme-icon">🌙</span>
             </button>
         </nav>
@@ -241,13 +735,13 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Clarity through voice—capture what matters</h1>
-            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Share your thoughts and discover meaningful insights. Every 3-minute recording becomes a moment of reflection, transformed through understanding.
+            <h1>Voice Memos</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6; color: var(--text-secondary);">
+                Record short voice memos with optional AI summaries.
             </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                <a href="#features" class="btn-primary">What Sonora offers</a>
-                <a href="#download" class="btn-secondary">Begin your journey</a>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem;">
+                <a href="#features" class="btn-primary">Discover Features</a>
+                <a href="#download" class="btn-secondary">Begin Your Journey</a>
             </div>
         </div>
     </section>
@@ -255,63 +749,69 @@
     <!-- Features Section -->
     <section id="features" class="section">
         <div class="container">
-            <h2 class="section-title">What Sonora offers</h2>
+            <h2 class="section-title">What Sonora Offers</h2>
             <p class="section-subtitle">
-                Every feature in Sonora is designed around you—your thoughts, your moments, your insights. Share what matters and let understanding emerge.
+                Every feature in Sonora is designed around you—your thoughts, your moments, your insights. 
+                Record, transcribe, and summarize short voice memos.
             </p>
             
             <div class="features-grid">
                 <!-- Smart Recording -->
-                <div class="feature-card">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">🎤</div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Share your thoughts</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6;">
-                        Capture meaningful moments in 3 minutes. Your voice matters—every word, every pause, every insight waiting to be discovered.
+                    <h3>Capture Your Voice</h3>
+                    <p>
+                        Record meaningful moments in focused 3-minute sessions. 
+                        and every insight waiting to be discovered becomes part of your personal audio journal.
                     </p>
                 </div>
 
                 <!-- AI Analysis -->
-                <div class="feature-card">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">🧠</div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Discover insights in your words</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6;">
-                        Watch patterns emerge from your thoughts. Gentle analysis reveals themes, moments of clarity, and paths forward in your own voice.
+                    <h3>AI-Powered Insights</h3>
+                    <p>
+                        Watch patterns emerge from your thoughts. Gentle analysis reveals themes, moments of clarity, 
+                        and paths forward, transforming scattered ideas into actionable understanding.
                     </p>
                 </div>
 
                 <!-- Live Activities -->
-                <div class="feature-card">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">📱</div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Live Activities & Dynamic Island</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6;">
-                        Real-time recording status in Dynamic Island and Live Activities. Monitor your recording progress from anywhere on your iPhone.
+                    <h3>Live Activities & Dynamic Island</h3>
+                    <p>
+                        Real-time recording status integrated with iOS 17. Monitor progress with Live Activities and Dynamic Island support.
                     </p>
                 </div>
 
                 <!-- Real-time Transcription -->
-                <div class="feature-card">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">⚡</div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Your voice, transformed to text</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6;">
-                        Watch your spoken thoughts become written words. Every nuance preserved, every intention honored through thoughtful transcription.
+                    <h3>Instant Transcription</h3>
+                    <p>
+                        Watch your spoken thoughts transform into written words in real-time. Every nuance preserved, 
+                        every intention honored through thoughtful, accurate transcription technology.
                     </p>
                 </div>
 
                 <!-- Native Design -->
-                <div class="feature-card">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">🎨</div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Native SwiftUI Design</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6;">
-                        Clean Apple aesthetic with standard SwiftUI components. Full light/dark mode support and complete VoiceOver accessibility.
+                    <h3>Native iOS Excellence</h3>
+                    <p>
+                        Crafted with SwiftUI for the most natural iPhone experience. Full accessibility support, 
+                        light/dark mode support, and a native iOS design.
                     </p>
                 </div>
 
                 <!-- Privacy & Security -->
-                <div class="feature-card">
-                    <div class="feature-icon">🔐</div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Privacy-Focused Architecture</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6;">
-                        Your voice recordings are processed securely with advanced guardrails and privacy protections. Your data stays private and secure.
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy by Design</h3>
+                    <p>
+                        Your voice recordings are processed securely with advanced privacy protections. 
+                        No tracking, no selling of data—just respect for your personal thoughts and moments.
                     </p>
                 </div>
             </div>
@@ -323,25 +823,26 @@
         <div class="container">
             <h2 class="section-title">Built with Excellence</h2>
             <p class="section-subtitle">
-                Sonora follows Clean Architecture principles with 95% compliance, modern concurrency patterns, and industry-leading development practices.
+                Sonora follows Clean Architecture principles with modern concurrency patterns, 
+                industry-leading development practices, and meticulous attention to detail.
             </p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div style="text-align: center; padding: 1.5rem;">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--sonora-primary); margin-bottom: 0.5rem;">95%</div>
-                    <p style="color: var(--text-secondary);">Clean Architecture Compliance</p>
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">95%</div>
+                    <p class="stat-label">Clean Architecture Compliance</p>
                 </div>
-                <div style="text-align: center; padding: 1.5rem;">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--sonora-primary); margin-bottom: 0.5rem;">16</div>
-                    <p style="color: var(--text-secondary);">Specialized Use Cases</p>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">16</div>
+                    <p class="stat-label">Specialized Use Cases</p>
                 </div>
-                <div style="text-align: center; padding: 1.5rem;">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--sonora-primary); margin-bottom: 0.5rem;">100%</div>
-                    <p style="color: var(--text-secondary);">VoiceOver Accessibility</p>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">100%</div>
+                    <p class="stat-label">VoiceOver Accessibility</p>
                 </div>
-                <div style="text-align: center; padding: 1.5rem;">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--sonora-primary); margin-bottom: 0.5rem;">Swift 6</div>
-                    <p style="color: var(--text-secondary);">Concurrency Compliance</p>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">Swift 6</div>
+                    <p class="stat-label">Concurrency Ready</p>
                 </div>
             </div>
         </div>
@@ -350,21 +851,22 @@
     <!-- Download Section -->
     <section id="download" class="section">
         <div class="container">
-            <div class="download-section">
-                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700;">Get Sonora for iPhone</h2>
-                <p style="color: var(--text-secondary); font-size: 1.125rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-                    Available on the App Store for iPhone. Requires iOS 17.0 or later for Live Activities and Dynamic Island integration.
+            <div class="download-section fade-in">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 800; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Get Sonora for iPhone</h2>
+                <p style="color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                    Available soon on the App Store for iPhone. Requires iOS 17.0 or later for full Live Activities 
+                    and Dynamic Island integration. Optimized for the latest iPhone models.
                 </p>
                 
                 <!-- App Store Button Placeholder -->
                 <div style="margin-bottom: 2rem;">
-                    <a href="#" role="button" aria-disabled="true" tabindex="-1" class="app-store-button is-disabled" style="font-size: 1.125rem; padding: 1rem 2rem;">
-                        📱 Coming soon to the App Store
+                    <a href="#" role="button" aria-disabled="true" tabindex="-1" class="app-store-button is-disabled">
+                        🚀 Coming Soon to the App Store
                     </a>
                 </div>
                 
-                <p style="font-size: 0.875rem; color: var(--text-muted);">
-                    Preview • Optimized for iPhone 15 Pro and Dynamic Island
+                <p style="font-size: 0.9rem; color: var(--text-muted); opacity: 0.8;">
+                    Preview Version • Optimized for iPhone 15 Pro and Dynamic Island
                 </p>
             </div>
         </div>
@@ -373,74 +875,250 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms-of-service.html">Terms of Service</a>
-                <a href="support.html">Support</a>
-                <a href="../index.html#contact">Contact</a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sonora</h4>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        Voice memos for iPhone.
+                        Transforming thoughts into insights, one recording at a time.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#features">AI Analysis</a></li>
+                        <li><a href="#features">Live Activities</a></li>
+                        <li><a href="#features">Real-time Transcription</a></li>
+                        <li><a href="#features">Privacy-First Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="mailto:kahessay@icloud.com">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Developer</h4>
+                    <ul>
+                        <li><a href="../index.html">Samuel Kahessay</a></li>
+                        <li><a href="../index.html#projects">Other Projects</a></li>
+                        <li><a href="../index.html#contact">Get in Touch</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 Sonora. Built with ❤️ for iPhone users who value privacy and intelligence.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Samuel Kahessay. Crafted with passion for iOS users who value both privacy and intelligence.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                    From dawn's first light to dusk's gentle embrace—every voice matters.
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Theme Toggle Script (from main site) -->
+    <!-- Enhanced JavaScript -->
     <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const html = document.documentElement;
+        // Enhanced Theme Manager with Sonora-specific Dawn/Dusk Transitions
+        class SonoraThemeManager {
+            constructor() {
+                this.theme = localStorage.getItem('theme') || 'light';
+                this.initTheme();
+                this.initThemeToggle();
+            }
 
-        // Check for saved theme or default to light mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', currentTheme);
-        themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+            initTheme() {
+                document.documentElement.setAttribute('data-theme', this.theme);
+                this.updateThemeIcon();
+            }
 
-        themeToggle.setAttribute('aria-pressed', currentTheme === 'dark');
-        themeToggle.addEventListener('click', () => {
-            const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-            themeToggle.setAttribute('aria-pressed', newTheme === 'dark');
-        });
+            initThemeToggle() {
+                const themeToggle = document.getElementById('theme-toggle');
+                if (themeToggle) {
+                    themeToggle.addEventListener('click', () => this.toggleTheme());
+                }
+            }
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+            toggleTheme() {
+                this.theme = this.theme === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', this.theme);
+                localStorage.setItem('theme', this.theme);
+                this.updateThemeIcon();
+            }
+
+            updateThemeIcon() {
+                const themeIcon = document.getElementById('theme-icon');
+                if (themeIcon) {
+                    themeIcon.textContent = this.theme === 'light' ? '🌙' : '☀️';
+                }
+            }
+        }
+
+        // Enhanced Animation Observer with Audio-Visual Effects
+        class SonoraAnimationObserver {
+            constructor() {
+                this.observeElements();
+            }
+
+            observeElements() {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReducedMotion) return;
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('visible');
+                                
+                                // Add special effect for feature cards
+                                if (entry.target.classList.contains('feature-card')) {
+                                    this.createFeatureRipple(entry.target);
+                                }
+                            }, index * 100);
+                        }
                     });
-                }
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                document.querySelectorAll('.fade-in, .feature-card, .stat-item').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
+            createFeatureRipple(element) {
+                const ripple = document.createElement('div');
+                ripple.style.cssText = `
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    background: radial-gradient(circle, var(--primary-color), transparent);
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0.3;
+                    animation: rippleEffect 0.8s ease-out;
+                    pointer-events: none;
+                    z-index: 0;
+                `;
+
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes rippleEffect {
+                        0% { width: 0; height: 0; opacity: 0.3; }
+                        100% { width: 200px; height: 200px; opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+
+                element.style.position = 'relative';
+                element.appendChild(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                    style.remove();
+                }, 800);
+            }
+        }
+
+        // Enhanced Smooth Scrolling for Sonora
+        class SonoraScrollManager {
+            constructor() {
+                this.initSmoothScroll();
+                this.initScrollEffects();
+            }
+
+            initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = document.querySelector(anchor.getAttribute('href'));
+                        if (target) {
+                            const headerHeight = document.querySelector('.header').offsetHeight;
+                            const targetPosition = target.offsetTop - headerHeight - 20;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+
+            initScrollEffects() {
+                let lastScrollY = window.scrollY;
+                let ticking = false;
+
+                const updateScrollEffects = () => {
+                    const currentScrollY = window.scrollY;
+                    const header = document.querySelector('.header');
+                    
+                    if (header) {
+                        if (currentScrollY > 100) {
+                            header.style.boxShadow = 'var(--shadow-light)';
+                        } else {
+                            header.style.boxShadow = '';
+                        }
+                    }
+                    
+                    lastScrollY = currentScrollY;
+                    ticking = false;
+                };
+
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(updateScrollEffects);
+                        ticking = true;
+                    }
+                });
+            }
+        }
+
+        // Initialize all Sonora enhancements when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new SonoraThemeManager();
+            new SonoraAnimationObserver();
+            new SonoraScrollManager();
+
+            // Add loaded class for final animations
+            document.body.classList.add('loaded');
+
+            // Initialize feature card interactions
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.setProperty('--hover-scale', '1.02');
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.setProperty('--hover-scale', '1');
+                });
             });
+
+            // Initialize download button interaction
+            const downloadButton = document.querySelector('.app-store-button');
+            if (downloadButton && !downloadButton.classList.contains('is-disabled')) {
+                downloadButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Future: Add App Store redirect logic here
+                    console.log('🚀 Redirecting to App Store...');
+                });
+            }
+
+            console.log('🎧 Sonora page loaded with enhanced dawn/dusk theming');
         });
 
-        // Add fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe feature cards for animation
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            if ('performance' in window) {
+                const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                console.log(`🎧 Sonora page loaded in ${loadTime}ms`);
+            }
         });
     </script>
 </body>

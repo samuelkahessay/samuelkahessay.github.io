@@ -4,159 +4,769 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - Sonora</title>
-    <meta name="description" content="Terms of Service for Sonora - Modern iOS Voice Memo App with AI Analysis">
+    <meta name="description" content="Terms of Service for Sonora — Voice Memos with AI Analysis">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Terms of Service - Sonora">
-    <meta property="og:description" content="Terms of Service and conditions for using the Sonora app">
+    <meta property="og:description" content="Terms of Service and conditions for using the Sonora voice memo app">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://samuelkahessay.github.io/sonora/terms-of-service.html">
     
     <!-- Icon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="../style.css">
+    <!-- Enhanced Styles -->
     <style>
-        .legal-container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            line-height: 1.6;
+        /* Enhanced dawn/dusk theme variables with improved legibility */
+        :root {
+            /* Dawn/Sunrise Light Theme - Enhanced for legibility */
+            --primary-color: #E85D00;           /* Stronger Orange for better contrast */
+            --primary-hover: #CC5200;          /* Deeper Orange */
+            --accent-color: #E91E63;           /* Stronger Pink */
+            --secondary-color: #2196F3;        /* Stronger Blue */
+            --text-primary: #1A1A1A;           /* Darker for better readability */
+            --text-secondary: #424242;         /* Stronger secondary text */
+            --text-muted: #616161;             /* Less muted for accessibility */
+            --bg-primary: #FAFAFA;             /* Subtle off-white */
+            --bg-secondary: #F5F5F5;           /* Light gray */
+            --bg-tertiary: #EEEEEE;            /* Card backgrounds */
+            --border-color: #E0E0E0;           /* Subtle borders */
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(224, 224, 224, 0.6);
+            
+            /* Improved gradients for better legibility */
+            --gradient-primary: linear-gradient(135deg, #E85D00 0%, #E91E63 100%);
+            --gradient-hero: linear-gradient(135deg, #F5F5F5 0%, #FAFAFA 100%);
+            --gradient-card: linear-gradient(135deg, rgba(232, 93, 0, 0.03) 0%, rgba(233, 30, 99, 0.03) 100%);
+            --gradient-text: linear-gradient(135deg, #E85D00 0%, #E91E63 100%);
+            
+            /* Modern shadows */
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-large: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+            --glow-effect: 0 0 0 3px rgba(232, 93, 0, 0.1);
+            
+            /* Smooth transitions */
+            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
-        
+
+        [data-theme="dark"] {
+            --primary-color: #FF7043;
+            --primary-hover: #FF5722;
+            --accent-color: #AB47BC;
+            --secondary-color: #42A5F5;
+            --text-primary: #FFFFFF;
+            --text-secondary: #E0E0E0;
+            --text-muted: #BDBDBD;
+            --bg-primary: #121212;
+            --bg-secondary: #1E1E1E;
+            --bg-tertiary: #2A2A2A;
+            --border-color: #333333;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --glass-bg: rgba(30, 30, 30, 0.8);
+            --glass-border: rgba(51, 51, 51, 0.6);
+            
+            /* Dark gradients */
+            --gradient-primary: linear-gradient(135deg, #FF7043 0%, #AB47BC 100%);
+            --gradient-hero: linear-gradient(135deg, #1E1E1E 0%, #121212 100%);
+            --gradient-card: linear-gradient(135deg, rgba(255, 112, 67, 0.05) 0%, rgba(171, 71, 188, 0.05) 100%);
+            --gradient-text: linear-gradient(135deg, #FF7043 0%, #AB47BC 100%);
+            
+            /* Dark shadows */
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+            --shadow-large: 0 10px 15px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3);
+            --glow-effect: 0 0 0 3px rgba(255, 112, 67, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            transition: var(--transition-smooth);
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+
+        /* Improved typography for better legibility */
+        .sonora-page h1, .sonora-page h2, .sonora-page h3, .sonora-page h4, .sonora-page h5, .sonora-page h6 {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* Fallback for better accessibility */
+        @supports not (-webkit-background-clip: text) {
+            .sonora-page h1, .sonora-page h2, .sonora-page h3, .sonora-page h4, .sonora-page h5, .sonora-page h6 {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        /* Enhanced Header */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 100;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link, .nav-logo {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+        .nav-logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Fallback for nav logo */
+        @supports not (-webkit-background-clip: text) {
+            .nav-logo {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        .theme-toggle {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: var(--glow-effect);
+        }
+
+        /* Enhanced Legal Container */
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 1.5rem 4rem;
+            line-height: 1.7;
+        }
+
         .legal-header {
             text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
-            background: linear-gradient(135deg, #007AFF, #5856D6);
-            border-radius: 16px;
-            color: white;
+            margin-bottom: 4rem;
+            padding: 4rem 2rem;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            color: var(--text-primary);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
         }
-        
+
+        .legal-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card);
+            opacity: 0.5;
+        }
+
+        .legal-header > * {
+            position: relative;
+            z-index: 1;
+        }
+
         .legal-header h1 {
             margin: 0;
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 700;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
         }
-        
+
         .legal-header p {
-            margin: 0.5rem 0 0;
+            margin: 0;
             opacity: 0.9;
-            font-size: 1.1rem;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
         }
-        
+
+        /* Enhanced Sections */
         .section {
-            margin: 2rem 0;
-            padding: 1.5rem;
+            margin: 3rem 0;
+            padding: 3rem;
             background: var(--bg-secondary);
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card);
+            opacity: 0.3;
+            transition: var(--transition-smooth);
+        }
+
+        .section:hover::before {
+            opacity: 0.5;
+        }
+
+        .section > * {
+            position: relative;
+            z-index: 1;
+        }
+
         .section h2 {
-            color: var(--text-primary);
-            margin: 0 0 1rem;
-            font-size: 1.5rem;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
+            margin: 0 0 1.5rem;
+            font-size: 2rem;
+            position: relative;
         }
-        
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
         .section h3 {
-            color: var(--text-primary);
-            margin: 1.5rem 0 0.5rem;
-            font-size: 1.2rem;
+            margin: 2rem 0 1rem;
+            font-size: 1.3rem;
         }
-        
+
         .section p, .section li {
             color: var(--text-secondary);
-            margin: 0.5rem 0;
+            margin: 0.75rem 0;
+            line-height: 1.7;
         }
-        
-        .section ul {
+
+        .section ul, .section ol {
             padding-left: 1.5rem;
+            margin: 1rem 0;
         }
-        
+
+        /* Enhanced Highlight Boxes */
         .highlight-box {
-            background: rgba(88, 86, 214, 0.1);
-            border: 1px solid rgba(88, 86, 214, 0.3);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-        }
-        
-        .highlight-box .terms-icon {
-            color: #5856D6;
-            font-size: 1.2rem;
-            margin-right: 0.5rem;
-        }
-        
-        .important-notice {
-            background: rgba(255, 149, 0, 0.1);
-            border: 1px solid rgba(255, 149, 0, 0.3);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-        }
-        
-        .important-notice .warning-icon {
-            color: #FF9500;
-            font-size: 1.2rem;
-            margin-right: 0.5rem;
-        }
-        
-        .contact-info {
-            background: var(--bg-primary);
+            background: var(--bg-tertiary);
             border: 2px solid var(--accent-color);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 2rem;
             margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card);
+            opacity: 0.4;
+        }
+
+        .highlight-box > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight-box .terms-icon {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+            display: inline-block;
+        }
+
+        /* Fallback for terms icon */
+        @supports not (-webkit-background-clip: text) {
+            .highlight-box .terms-icon {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Enhanced Important Notice */
+        .important-notice {
+            background: var(--bg-tertiary);
+            border: 2px solid #FF9500;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .important-notice::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(255, 149, 0, 0.05));
+            opacity: 0.6;
+        }
+
+        .important-notice > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .important-notice .warning-icon {
+            color: #FF9500;
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+            display: inline-block;
+        }
+
+        /* Enhanced Contact Info */
+        .contact-info {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--primary-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card);
+            opacity: 0.3;
+        }
+
+        .contact-info > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info ul li {
+            margin: 1rem 0;
+            padding: 0.5rem 0;
+        }
+
+        .contact-info strong {
+            color: var(--text-primary);
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Fallback for contact info strong */
+        @supports not (-webkit-background-clip: text) {
+            .contact-info strong {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        /* Enhanced Last Updated */
         .last-updated {
             text-align: center;
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin: 2rem 0;
-            padding: 1rem;
+            font-size: 0.95rem;
+            margin: 3rem 0;
+            padding: 2rem;
             background: var(--bg-secondary);
-            border-radius: 8px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            position: relative;
         }
-        
+
+        .last-updated::before {
+            content: '📅';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-primary);
+            padding: 0 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Enhanced Navigation Links */
         .nav-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
+            gap: 1.5rem;
+            margin: 3rem 0;
             flex-wrap: wrap;
         }
-        
+
         .nav-links a {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--gradient-primary);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            font-weight: 500;
+            border-radius: 12px;
+            transition: var(--transition-smooth);
+            font-weight: 600;
+            box-shadow: var(--shadow-medium);
         }
-        
+
         .nav-links a:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,122,255,0.3);
+            box-shadow: var(--shadow-large);
+            color: white;
         }
-        
+
+        /* Service Features */
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .service-feature {
+            background: var(--bg-tertiary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .service-feature:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .service-feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Fallback for service feature icon */
+        @supports not (-webkit-background-clip: text) {
+            .service-feature-icon {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        .service-feature h4 {
+            margin: 0 0 0.5rem;
+            font-size: 1.1rem;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Fallback for service feature h4 */
+        @supports not (-webkit-background-clip: text) {
+            .service-feature h4 {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        .service-feature p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Legal Requirements */
+        .legal-requirement {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .legal-requirement::before {
+            content: '⚖️';
+            position: absolute;
+            top: -8px;
+            left: 15px;
+            background: var(--bg-primary);
+            padding: 0 8px;
+            font-size: 1rem;
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient-primary);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1.5rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            margin: 0 1.5rem;
+            color: var(--text-muted);
+        }
+
+        /* Enhanced Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced Responsive Design */
         @media (max-width: 768px) {
             .legal-container {
-                margin: 1rem auto;
-                padding: 0 0.5rem;
+                padding: 100px 1rem 2rem;
+            }
+            
+            .legal-header {
+                padding: 3rem 1.5rem;
+                margin-bottom: 3rem;
+            }
+            
+            .nav-container {
+                padding: 1rem;
+            }
+            
+            .nav-links-container {
+                gap: 1rem;
             }
             
             .section {
-                padding: 1rem;
+                padding: 2rem;
             }
+            
+            .highlight-box {
+                padding: 1.5rem;
+            }
+            
+            .contact-info {
+                padding: 2rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links a {
+                padding: 0.875rem 1.5rem;
+            }
+            
+            .service-features {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .legal-header h1 {
+                font-size: 2rem;
+            }
+            
+            .legal-header p {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Enhanced Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Enhanced Focus States */
+        .theme-toggle:focus,
+        .nav-links a:focus,
+        .section:focus {
+            outline: 3px solid var(--primary-color);
+            outline-offset: 2px;
         }
     </style>
 </head>
@@ -165,8 +775,8 @@
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">Samuel Kahessay</a>
             <div class="nav-links-container">
-                <a href="../sonora/index.html" class="nav-link">Sonora</a>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <a href="index.html" class="nav-link">Sonora</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle between dawn and dusk themes">
                     <span class="theme-icon">🌙</span>
                 </button>
             </div>
@@ -176,252 +786,507 @@
     <div class="legal-container">
         <header class="legal-header">
             <h1>📄 Our promise to you</h1>
-            <p>How we work together to create something meaningful</p>
+            <p>How we work together in clear and straightforward terms</p>
         </header>
 
         <div class="nav-links">
             <a href="index.html">← Back to Sonora</a>
             <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="support.html">Support</a>
+            <a href="support.html">Support Center</a>
         </div>
 
         <div class="highlight-box">
-            <p><span class="terms-icon">📝</span><strong>Agreement:</strong> By downloading, installing, or using Sonora, you agree to be bound by these Terms of Service. Please read them carefully before using the app.</p>
+            <p><span class="terms-icon">📝</span><strong>Agreement:</strong> By downloading, installing, or using Sonora, you agree to be bound by these Terms of Service. Please read them carefully before beginning your journey with us.</p>
         </div>
 
-        <section class="section">
+        <section class="section fade-in">
             <h2>1. Acceptance of Terms</h2>
             <p>These Terms of Service ("Terms") govern your use of the Sonora mobile application ("App") developed by Samuel Kahessay ("we," "our," or "us"). By accessing or using Sonora, you agree to comply with and be bound by these Terms.</p>
             
             <h3>Agreement Requirements</h3>
-            <ul>
-                <li>You must be at least 13 years old to use Sonora</li>
-                <li>You must have the legal capacity to enter into this agreement</li>
-                <li>Your use must comply with all applicable laws and regulations</li>
-            </ul>
+            <div class="legal-requirement">
+                <ul>
+                    <li>You must be at least 13 years old to use Sonora</li>
+                    <li>You must have the legal capacity to enter into this agreement</li>
+                    <li>Your use must comply with all applicable laws and regulations</li>
+                    <li>You understand that Sonora is designed for personal voice recording and analysis</li>
+                </ul>
+            </div>
         </section>
 
-        <section class="section">
+        <section class="section fade-in">
             <h2>2. Description of Service</h2>
-            <p>Sonora is a voice memo application that provides:</p>
-            <ul>
-                <li><strong>Voice Recording:</strong> Capture audio recordings up to 3 minutes in length</li>
-                <li><strong>Transcription:</strong> Automatic speech-to-text conversion using secure APIs</li>
-                <li><strong>AI Analysis:</strong> Generate summaries, extract themes, and identify action items</li>
-                <li><strong>Local Storage:</strong> Store your recordings and transcriptions on your device</li>
-                <li><strong>Live Activities:</strong> Real-time recording status on iOS</li>
-            </ul>
+            <p>Sonora is a sophisticated voice memo application that provides an elegant and intelligent recording experience:</p>
+            
+            <div class="service-features">
+                <div class="service-feature">
+                    <div class="service-feature-icon">🎤</div>
+                    <h4>Voice Recording</h4>
+                    <p>Capture audio recordings up to 3 minutes in length</p>
+                </div>
+                <div class="service-feature">
+                    <div class="service-feature-icon">📝</div>
+                    <h4>AI Transcription</h4>
+                    <p>Automatic speech-to-text conversion using secure, industry-leading APIs</p>
+                </div>
+                <div class="service-feature">
+                    <div class="service-feature-icon">🧠</div>
+                    <h4>Intelligent Analysis</h4>
+                    <p>Generate summaries, extract themes, and identify action items from your voice</p>
+                </div>
+                <div class="service-feature">
+                    <div class="service-feature-icon">📱</div>
+                    <h4>Local Storage</h4>
+                    <p>Store your recordings and transcriptions securely on your device</p>
+                </div>
+                <div class="service-feature">
+                    <div class="service-feature-icon">⚡</div>
+                    <h4>Live Activities</h4>
+                    <p>Real-time recording status with iOS 17 Dynamic Island integration</p>
+                </div>
+                <div class="service-feature">
+                    <div class="service-feature-icon">🎨</div>
+                    <h4>Native Design</h4>
+                    <p>Beautiful SwiftUI interface following Apple's Human Interface Guidelines</p>
+                </div>
+            </div>
         </section>
 
-        <section class="section">
+        <section class="section fade-in">
             <h2>3. User Responsibilities</h2>
             
             <h3>Acceptable Use</h3>
             <p>You agree to use Sonora only for lawful purposes and in accordance with these Terms. You agree not to:</p>
             <ul>
-                <li>Record conversations without proper consent from all parties</li>
-                <li>Use the app to create, store, or transmit illegal content</li>
-                <li>Violate any local, state, national, or international laws</li>
-                <li>Infringe upon others' privacy, intellectual property, or other rights</li>
-                <li>Attempt to reverse engineer, modify, or hack the application</li>
-                <li>Use the service for commercial purposes without authorization</li>
+                <li><strong>🚫 Unauthorized Recording:</strong> Record conversations without proper consent from all parties where required by law</li>
+                <li><strong>🚫 Illegal Content:</strong> Use the app to create, store, or transmit illegal or harmful content</li>
+                <li><strong>🚫 Law Violations:</strong> Violate any local, state, national, or international laws or regulations</li>
+                <li><strong>🚫 Privacy Infringement:</strong> Infringe upon others' privacy, intellectual property, or other legal rights</li>
+                <li><strong>🚫 Reverse Engineering:</strong> Attempt to reverse engineer, modify, or hack the application</li>
+                <li><strong>🚫 Commercial Misuse:</strong> Use the service for unauthorized commercial purposes</li>
+                <li><strong>🚫 Harmful Activities:</strong> Engage in activities that could harm the app, its users, or our services</li>
             </ul>
 
             <h3>Content Responsibility</h3>
             <ul>
-                <li>You are solely responsible for the content you record and store</li>
-                <li>You must ensure you have the right to record any audio content</li>
-                <li>You are responsible for complying with recording consent laws in your jurisdiction</li>
+                <li><strong>📋 Full Ownership:</strong> You are solely responsible for the content you record and store</li>
+                <li><strong>✅ Recording Rights:</strong> You must ensure you have the legal right to record any audio content</li>
+                <li><strong>⚖️ Legal Compliance:</strong> You are responsible for complying with recording consent laws in your jurisdiction</li>
+                <li><strong>🔒 Content Security:</strong> You acknowledge that you control access to your recorded content</li>
             </ul>
+
+            <div class="important-notice">
+                <p><span class="warning-icon">⚠️</span><strong>Recording Laws:</strong> You are responsible for complying with all applicable recording and consent laws in your jurisdiction. Some areas require consent from all parties before recording conversations. Please research and understand your local laws.</p>
+            </div>
         </section>
 
-        <section class="section">
+        <section class="section fade-in">
             <h2>4. Privacy and Data</h2>
-            <p>Your privacy is important to us. Please review our <a href="privacy-policy.html">Privacy Policy</a> to understand how we collect, use, and protect your information. Key points:</p>
+            <p>Your privacy is fundamental to how we've built Sonora. Please review our comprehensive <a href="privacy-policy.html">Privacy Policy</a> to understand how we collect, use, and protect your information. Key highlights:</p>
+            
             <ul>
-                <li>Audio recordings are processed securely for transcription and analysis</li>
-                <li>We do not permanently store your audio content on our servers</li>
-                <li>Local data remains on your device under your control</li>
-                <li>You can delete your recordings and data at any time</li>
+                <li><strong>🔐 Secure Processing:</strong> Audio recordings are processed securely for transcription and analysis</li>
+                <li><strong>🚫 No Permanent Storage:</strong> We do not permanently store your audio content on our servers</li>
+                <li><strong>📱 Local Control:</strong> Your data remains on your device under your complete control</li>
+                <li><strong>🗑️ Easy Deletion:</strong> You can delete your recordings and associated data at any time</li>
+                <li><strong>🎯 Purpose Limitation:</strong> Your data is used only for the features you choose to use</li>
+                <li><strong>🛡️ Privacy by Design:</strong> Every feature is built with privacy as a core principle</li>
             </ul>
         </section>
 
-        <div class="important-notice">
-            <p><span class="warning-icon">⚠️</span><strong>Recording Laws:</strong> You are responsible for complying with all applicable recording and consent laws in your jurisdiction. Some areas require consent from all parties before recording conversations.</p>
-        </div>
-
-        <section class="section">
+        <section class="section fade-in">
             <h2>5. Service Limitations and Availability</h2>
             
             <h3>Technical Limitations</h3>
-            <ul>
-                <li><strong>Recording Duration:</strong> Maximum 3 minutes per recording</li>
-                <li><strong>iOS Compatibility:</strong> Requires iOS 17.0 or later</li>
-                <li><strong>Network Dependency:</strong> Transcription and AI analysis require internet connectivity</li>
-                <li><strong>Storage:</strong> Limited by your device's available storage space</li>
-            </ul>
+            <div class="legal-requirement">
+                <ul>
+                    <li><strong>⏱️ Recording Duration:</strong> Maximum 3 minutes per recording (by design for focused capture)</li>
+                    <li><strong>📱 iOS Compatibility:</strong> Requires iOS 17.0 or later for full feature compatibility</li>
+                    <li><strong>🌐 Network Dependency:</strong> Transcription and AI analysis require stable internet connectivity</li>
+                    <li><strong>💾 Storage:</strong> Limited by your device's available storage space</li>
+                    <li><strong>🔋 Battery:</strong> Recording and processing features require adequate battery life</li>
+                </ul>
+            </div>
 
             <h3>Service Availability</h3>
+            <p>We are committed to providing reliable service while being transparent about limitations:</p>
             <ul>
-                <li>We strive for 99% uptime but cannot guarantee uninterrupted service</li>
-                <li>Maintenance windows may cause temporary service interruptions</li>
-                <li>Third-party services (transcription, AI) may affect availability</li>
-                <li>We reserve the right to modify or discontinue features with notice</li>
+                <li><strong>🎯 Uptime Goal:</strong> We strive for 99% uptime but cannot guarantee uninterrupted service</li>
+                <li><strong>🔧 Maintenance:</strong> Scheduled maintenance windows may cause temporary service interruptions</li>
+                <li><strong>🤝 Third-Party Dependencies:</strong> External services (transcription, AI) may affect availability</li>
+                <li><strong>📈 Feature Evolution:</strong> We reserve the right to modify or enhance features with notice</li>
+                <li><strong>📊 Performance Optimization:</strong> We continuously work to improve speed and reliability</li>
             </ul>
         </section>
 
-        <section class="section">
+        <section class="section fade-in">
             <h2>6. Intellectual Property Rights</h2>
             
             <h3>App Ownership</h3>
-            <p>Sonora, including its design, code, features, and documentation, is owned by Samuel Kahessay and protected by copyright and other intellectual property laws.</p>
+            <p>Sonora, including its design, code, features, user interface, and documentation, is owned by Samuel Kahessay and protected by copyright, trademark, and other intellectual property laws.</p>
 
-            <h3>Your Content</h3>
+            <h3>Your Content Rights</h3>
             <ul>
-                <li>You retain ownership of your recorded content and transcriptions</li>
-                <li>You grant us a limited license to process your content for app functionality</li>
-                <li>We do not claim ownership of your voice recordings or generated transcriptions</li>
+                <li><strong>👑 Complete Ownership:</strong> You retain full ownership of your recorded content and transcriptions</li>
+                <li><strong>📄 Limited License:</strong> You grant us only the minimal license necessary to process your content for app functionality</li>
+                <li><strong>🚫 No Ownership Claims:</strong> We do not claim ownership of your voice recordings or generated transcriptions</li>
+                <li><strong>⏱️ Temporary Processing:</strong> Our license expires when processing is complete or when you delete content</li>
+                <li><strong>🎯 Purpose Limitation:</strong> We can only use your content to provide the specific features you request</li>
             </ul>
 
-            <h3>Restrictions</h3>
+            <h3>Usage Restrictions</h3>
             <ul>
-                <li>You may not copy, distribute, or create derivative works of the app</li>
-                <li>You may not reverse engineer or attempt to extract source code</li>
-                <li>You may not use our trademarks or branding without permission</li>
+                <li><strong>🚫 No Copying:</strong> You may not copy, distribute, or create derivative works of the app</li>
+                <li><strong>🚫 No Reverse Engineering:</strong> You may not reverse engineer or attempt to extract source code</li>
+                <li><strong>🚫 No Trademark Use:</strong> You may not use our trademarks, logos, or branding without written permission</li>
+                <li><strong>🚫 No Resale:</strong> You may not resell, redistribute, or sublicense the app</li>
             </ul>
         </section>
 
-        <section class="section">
+        <section class="section fade-in">
             <h2>7. Disclaimers and Limitations</h2>
             
             <h3>Service Disclaimers</h3>
+            <p>While we strive for excellence, we want to be transparent about limitations:</p>
             <ul>
-                <li><strong>Accuracy:</strong> Transcription and AI analysis are provided "as-is" and may contain errors</li>
-                <li><strong>Reliability:</strong> We cannot guarantee 100% accurate transcription or analysis</li>
-                <li><strong>Availability:</strong> Service interruptions may occur due to technical issues</li>
-                <li><strong>Compatibility:</strong> Performance may vary across different devices and iOS versions</li>
+                <li><strong>⚡ Transcription Accuracy:</strong> AI transcription is provided "as-is" and may contain errors depending on audio quality, accents, and content</li>
+                <li><strong>🤖 AI Analysis Reliability:</strong> AI-generated insights are suggestions and may not always be completely accurate</li>
+                <li><strong>🌐 Network Dependencies:</strong> Service interruptions may occur due to internet connectivity or external service issues</li>
+                <li><strong>📱 Device Compatibility:</strong> Performance may vary across different iPhone models and iOS versions</li>
+                <li><strong>🔋 Battery Impact:</strong> Recording and AI processing features will consume battery power</li>
             </ul>
 
             <h3>No Professional Advice</h3>
-            <p>Insights generated by the app are for informational purposes only and are not a substitute for professional advice (including medical, legal, financial, or mental health advice). Do not rely on Sonora in situations where professional judgment is required.</p>
+            <div class="important-notice">
+                <p><span class="warning-icon">⚠️</span><strong>Important:</strong> Insights generated by Sonora are for informational and organizational purposes only. They are not a substitute for professional advice (including medical, legal, financial, or mental health guidance). Do not rely on Sonora's AI analysis for decisions requiring professional judgment.</p>
+            </div>
 
             <h3>Limitation of Liability</h3>
             <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE SHALL NOT BE LIABLE FOR:</p>
             <ul>
-                <li>Any indirect, incidental, special, or consequential damages</li>
-                <li>Loss of data, recordings, or transcriptions</li>
-                <li>Business interruption or lost profits</li>
-                <li>Damages resulting from service interruptions or errors</li>
+                <li><strong>🚫 Indirect Damages:</strong> Any indirect, incidental, special, or consequential damages</li>
+                <li><strong>🚫 Data Loss:</strong> Loss of recordings, transcriptions, or other data (backup your important content)</li>
+                <li><strong>🚫 Business Interruption:</strong> Loss of profits, business interruption, or operational delays</li>
+                <li><strong>🚫 Service Issues:</strong> Damages resulting from service interruptions, transcription errors, or technical problems</li>
+                <li><strong>🚫 Third-Party Actions:</strong> Actions or omissions of third-party service providers</li>
             </ul>
         </section>
 
-        <section class="section">
+        <section class="section fade-in">
             <h2>8. Termination</h2>
             
             <h3>User Termination</h3>
-            <p>You may stop using Sonora at any time by deleting the app from your device. Your locally stored data will be removed with the app.</p>
+            <p>You may stop using Sonora at any time by deleting the app from your device. Your locally stored data will be removed with the app deletion.</p>
 
-            <h3>Service Termination</h3>
+            <h3>Service Termination by Us</h3>
             <p>We may terminate or suspend your access to Sonora if you:</p>
             <ul>
-                <li>Violate these Terms of Service</li>
-                <li>Use the service for illegal or harmful purposes</li>
-                <li>Attempt to compromise the security or integrity of the service</li>
+                <li><strong>📋 Terms Violation:</strong> Violate these Terms of Service or our Privacy Policy</li>
+                <li><strong>⚖️ Illegal Use:</strong> Use the service for illegal, harmful, or abusive purposes</li>
+                <li><strong>🔒 Security Threats:</strong> Attempt to compromise the security or integrity of the service</li>
+                <li><strong>🚫 Prohibited Activities:</strong> Engage in activities that harm other users or our services</li>
+            </ul>
+
+            <h3>Effects of Termination</h3>
+            <ul>
+                <li><strong>📱 Local Data:</strong> Your device-stored content remains under your control</li>
+                <li><strong>☁️ Server Data:</strong> Any data in processing will be deleted according to our retention policies</li>
+                <li><strong>📄 Feature Access:</strong> You will lose access to cloud-based features like transcription and AI analysis</li>
+                <li><strong>📋 Terms Survival:</strong> Certain provisions (like intellectual property rights) survive termination</li>
             </ul>
         </section>
 
-        <section class="section">
+        <section class="section fade-in">
             <h2>9. Updates and Modifications</h2>
             
             <h3>App Updates</h3>
+            <p>We regularly improve Sonora to provide you with the best possible experience:</p>
             <ul>
-                <li>We may release updates to improve features, fix bugs, or enhance security</li>
-                <li>Some updates may require the latest iOS version</li>
-                <li>Continued use after updates constitutes acceptance of changes</li>
+                <li><strong>✨ Feature Enhancements:</strong> New features and improvements based on user feedback</li>
+                <li><strong>🐛 Bug Fixes:</strong> Regular updates to fix issues and improve stability</li>
+                <li><strong>🔒 Security Updates:</strong> Ongoing security improvements and patches</li>
+                <li><strong>📱 OS Compatibility:</strong> Updates to support the latest iOS versions and devices</li>
+                <li><strong>⚡ Performance:</strong> Optimizations for speed, battery life, and user experience</li>
             </ul>
 
             <h3>Terms Updates</h3>
+            <p>We may modify these Terms from time to time to reflect changes in our services, legal requirements, or business practices:</p>
             <ul>
-                <li>We may modify these Terms from time to time</li>
-                <li>Material changes will be communicated through the app or our website</li>
-                <li>Continued use after changes constitutes acceptance of new Terms</li>
+                <li><strong>📢 Clear Communication:</strong> Material changes will be communicated through the app or our website</li>
+                <li><strong>⏰ Advance Notice:</strong> Significant changes will be announced at least 30 days in advance</li>
+                <li><strong>✅ Continued Use:</strong> Continued use after changes constitutes acceptance of new Terms</li>
+                <li><strong>🚪 Your Choice:</strong> If you disagree with changes, you can stop using the app</li>
             </ul>
         </section>
 
-        <section class="section">
+        <section class="section fade-in">
             <h2>10. Governing Law and Disputes</h2>
-            <p>These Terms are governed by the laws of the United States and the state where the developer resides, without regard to conflict of law principles.</p>
+            
+            <h3>Governing Law</h3>
+            <p>These Terms are governed by the laws of the <strong>Province of Alberta, Canada</strong>, without regard to conflict-of-law principles.</p>
             
             <h3>Dispute Resolution</h3>
+            <p>We believe in resolving issues collaboratively and transparently:</p>
             <ul>
-                <li>We encourage resolving disputes through direct communication first</li>
-                <li>Any legal disputes will be handled in the appropriate courts</li>
-                <li>You agree to resolve disputes individually, not as part of a class action</li>
+                <li><strong>🤝 Direct Communication:</strong> We encourage resolving disputes through direct communication first</li>
+                <li><strong>📧 Contact First:</strong> Please reach out to us at <a href="mailto:kahessay@icloud.com">kahessay [at] icloud [dot] com</a> with any concerns</li>
+                <li><strong>⚖️ Legal Proceedings:</strong> Any legal disputes will be handled in the appropriate courts</li>
+                <li><strong>👤 Individual Resolution:</strong> You agree to resolve disputes individually, not as part of a class action</li>
+                <li><strong>🎯 Good Faith:</strong> Both parties agree to engage in good faith efforts to resolve disputes</li>
             </ul>
         </section>
 
-        <section class="section">
+        <section class="section fade-in">
             <h2>11. Additional Terms</h2>
             
             <h3>Severability</h3>
-            <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force.</p>
+            <p>If any provision of these Terms is found to be unenforceable or invalid, the remaining provisions will continue in full force and effect.</p>
 
             <h3>Entire Agreement</h3>
-            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and us regarding Sonora.</p>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and us regarding Sonora and supersede all prior agreements or understandings.</p>
 
             <h3>No Waiver</h3>
-            <p>Our failure to enforce any provision of these Terms does not constitute a waiver of that provision.</p>
+            <p>Our failure to enforce any provision of these Terms does not constitute a waiver of that provision or any other provision.</p>
+
+            <h3>Assignment</h3>
+            <p>You may not assign your rights under these Terms without our written consent. We may assign our rights and obligations under these Terms to any third party.</p>
+
+            <h3>Force Majeure</h3>
+            <p>We shall not be liable for any delay or failure to perform due to causes beyond our reasonable control, including natural disasters, war, terrorism, or government actions.</p>
         </section>
 
         <section class="contact-info">
             <h2>12. Contact Information</h2>
-            <p>If you have questions about these Terms of Service, please contact us:</p>
+            <p>We welcome your questions, feedback, and concerns about these Terms of Service or any aspect of Sonora.</p>
+            
+            <h3>How to Reach Us</h3>
             <ul>
-                <li><strong>Email:</strong> <a href="mailto:support@sonora-app.com">support@sonora-app.com</a></li>
-                <li><strong>Support:</strong> <a href="support.html">Sonora Support Page</a></li>
+                <li><strong>📧 General Support:</strong> <a href="mailto:kahessay@icloud.com">kahessay [at] icloud [dot] com</a></li>
+                <li><strong>⚖️ Legal Questions:</strong> <a href="mailto:kahessay@icloud.com">kahessay [at] icloud [dot] com</a></li>
+                <li><strong>🛟 Support Center:</strong> <a href="support.html">Comprehensive Help Documentation</a></li>
+                <li><strong>⏰ Response Time:</strong> We aim to respond to all inquiries within 48 hours</li>
+            </ul>
+
+            <h3>What to Include</h3>
+            <p>When contacting us about these Terms, please include:</p>
+            <ul>
+                <li>Your specific question or concern</li>
+                <li>The relevant section of the Terms (if applicable)</li>
+                <li>Your iPhone model and iOS version</li>
+                <li>The version of Sonora you're using</li>
             </ul>
         </section>
 
         <div class="last-updated">
             <p><strong>Last Updated:</strong> September 7, 2025</p>
-            <p>These Terms of Service are effective as of the date listed above and apply to all users of the Sonora app.</p>
+            <p>These Terms of Service are effective as of the date listed above and apply to all users of the Sonora app worldwide.</p>
+            <p style="margin-top: 1rem; font-style: italic;">
+                Version 1.0 • Crafted with clarity and care for your understanding
+            </p>
         </div>
 
         <div class="nav-links">
-            <a href="index.html">← Back to Sonora</a>
+            <a href="index.html">← Return to Sonora</a>
             <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="support.html">Support</a>
+            <a href="support.html">Support Center</a>
         </div>
     </div>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Sonora</h4>
-                    <p>Modern iOS Voice Memo App with AI Analysis</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                        <li><a href="support.html">Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="../index.html">Samuel Kahessay</a></li>
-                    </ul>
-                </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sonora</h4>
+                <p style="color: var(--text-secondary); line-height: 1.6;">
+                    Voice memos for iPhone.
+                    Crafted with care, respect, and attention to every detail.
+                </p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Samuel Kahessay. All rights reserved.</p>
+            <div class="footer-section">
+                <h4>Legal & Policies</h4>
+                <ul>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="support.html">Support Center</a></li>
+                    <li><a href="mailto:kahessay@icloud.com">Legal Questions</a></li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="support.html">Help Center</a></li>
+                    <li><a href="mailto:kahessay@icloud.com">Email Support</a></li>
+                    <li><a href="mailto:kahessay@icloud.com?subject=Feature%20Request">Feature Requests</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Developer</h4>
+                <ul>
+                    <li><a href="../index.html">Samuel Kahessay</a></li>
+                    <li><a href="../index.html#projects">Other Projects</a></li>
+                    <li><a href="../index.html#contact">Get in Touch</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Samuel Kahessay. Crafted with respect for your trust and understanding.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                Building bridges of trust from dawn's first light to dusk's gentle embrace.
+            </p>
         </div>
     </footer>
 
-    <script src="../style.js"></script>
+    <script>
+        // Enhanced Theme Manager for Terms Page
+        class TermsThemeManager {
+            constructor() {
+                this.theme = localStorage.getItem('theme') || 'light';
+                this.initTheme();
+                this.initThemeToggle();
+            }
+
+            initTheme() {
+                document.documentElement.setAttribute('data-theme', this.theme);
+                this.updateThemeIcon();
+            }
+
+            initThemeToggle() {
+                const themeToggle = document.getElementById('theme-toggle');
+                if (themeToggle) {
+                    themeToggle.addEventListener('click', () => this.toggleTheme());
+                }
+            }
+
+            toggleTheme() {
+                this.theme = this.theme === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', this.theme);
+                localStorage.setItem('theme', this.theme);
+                this.updateThemeIcon();
+            }
+
+            updateThemeIcon() {
+                const themeIcon = document.querySelector('.theme-icon');
+                if (themeIcon) {
+                    themeIcon.textContent = this.theme === 'light' ? '🌙' : '☀️';
+                }
+            }
+        }
+
+        // Enhanced Animation Observer for Terms Page
+        class TermsAnimationObserver {
+            constructor() {
+                this.observeElements();
+                this.initTermsEffects();
+            }
+
+            observeElements() {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReducedMotion) return;
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('visible');
+                            }, index * 100);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                document.querySelectorAll('.fade-in, .section, .service-features, .important-notice').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
+            initTermsEffects() {
+                // Add hover effects for service features
+                document.querySelectorAll('.service-feature').forEach(feature => {
+                    feature.addEventListener('mouseenter', () => {
+                        feature.style.transform = 'translateY(-5px) scale(1.02)';
+                        feature.style.boxShadow = 'var(--shadow-large)';
+                    });
+
+                    feature.addEventListener('mouseleave', () => {
+                        feature.style.transform = 'translateY(0) scale(1)';
+                        feature.style.boxShadow = '';
+                    });
+                });
+            }
+        }
+
+        // Enhanced Smooth Scrolling
+        class TermsScrollManager {
+            constructor() {
+                this.initSmoothScroll();
+                this.initScrollEffects();
+            }
+
+            initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = document.querySelector(anchor.getAttribute('href'));
+                        if (target) {
+                            const headerHeight = document.querySelector('.navbar').offsetHeight;
+                            const targetPosition = target.offsetTop - headerHeight - 20;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+
+            initScrollEffects() {
+                let ticking = false;
+
+                const updateScrollEffects = () => {
+                    const scrollY = window.scrollY;
+                    const navbar = document.querySelector('.navbar');
+                    
+                    if (navbar) {
+                        if (scrollY > 100) {
+                            navbar.style.boxShadow = 'var(--shadow-light)';
+                        } else {
+                            navbar.style.boxShadow = '';
+                        }
+                    }
+                    
+                    ticking = false;
+                };
+
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(updateScrollEffects);
+                        ticking = true;
+                    }
+                });
+            }
+        }
+
+        // Initialize all terms page enhancements
+        document.addEventListener('DOMContentLoaded', () => {
+            new TermsThemeManager();
+            new TermsAnimationObserver();
+            new TermsScrollManager();
+
+            // Add loaded class for final animations
+            document.body.classList.add('loaded');
+
+            console.log('📄 Sonora Terms of Service page loaded with enhanced legal theming');
+        });
+
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            if ('performance' in window) {
+                const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                console.log(`📋 Terms page loaded in ${loadTime}ms`);
+            }
+        });
+    </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support - Sonora</title>
-    <meta name="description" content="Get help and support for Sonora - Modern iOS Voice Memo App with AI Analysis">
+    <meta name="description" content="Help and support for Sonora — Voice Memos with AI Analysis">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph -->
@@ -16,246 +16,782 @@
     <!-- Icon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛟</text></svg>">
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="../style.css">
+    <!-- Enhanced Styles -->
     <style>
+        /* Enhanced dawn/dusk theme variables with improved legibility */
+        :root {
+            /* Dawn/Sunrise Light Theme - Enhanced for legibility */
+            --primary-color: #E85D00;           /* Stronger Orange for better contrast */
+            --primary-hover: #CC5200;          /* Deeper Orange */
+            --accent-color: #E91E63;           /* Stronger Pink */
+            --secondary-color: #2196F3;        /* Stronger Blue */
+            --text-primary: #1A1A1A;           /* Darker for better readability */
+            --text-secondary: #424242;         /* Stronger secondary text */
+            --text-muted: #616161;             /* Less muted for accessibility */
+            --bg-primary: #FAFAFA;             /* Subtle off-white */
+            --bg-secondary: #F5F5F5;           /* Light gray */
+            --bg-tertiary: #EEEEEE;            /* Card backgrounds */
+            --border-color: #E0E0E0;           /* Subtle borders */
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(224, 224, 224, 0.6);
+            
+            /* Improved gradients for better legibility */
+            --gradient-primary: linear-gradient(135deg, #E85D00 0%, #E91E63 100%);
+            --gradient-hero: linear-gradient(135deg, #F5F5F5 0%, #FAFAFA 100%);
+            --gradient-card: linear-gradient(135deg, rgba(232, 93, 0, 0.03) 0%, rgba(233, 30, 99, 0.03) 100%);
+            --gradient-text: linear-gradient(135deg, #E85D00 0%, #E91E63 100%);
+            
+            /* Modern shadows */
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-large: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+            --glow-effect: 0 0 0 3px rgba(232, 93, 0, 0.1);
+            
+            /* Smooth transitions */
+            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #FF7043;
+            --primary-hover: #FF5722;
+            --accent-color: #AB47BC;
+            --secondary-color: #42A5F5;
+            --text-primary: #FFFFFF;
+            --text-secondary: #E0E0E0;
+            --text-muted: #BDBDBD;
+            --bg-primary: #121212;
+            --bg-secondary: #1E1E1E;
+            --bg-tertiary: #2A2A2A;
+            --border-color: #333333;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --glass-bg: rgba(30, 30, 30, 0.8);
+            --glass-border: rgba(51, 51, 51, 0.6);
+            
+            /* Dark gradients */
+            --gradient-primary: linear-gradient(135deg, #FF7043 0%, #AB47BC 100%);
+            --gradient-hero: linear-gradient(135deg, #1E1E1E 0%, #121212 100%);
+            --gradient-card: linear-gradient(135deg, rgba(255, 112, 67, 0.05) 0%, rgba(171, 71, 188, 0.05) 100%);
+            --gradient-text: linear-gradient(135deg, #FF7043 0%, #AB47BC 100%);
+            
+            /* Dark shadows */
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+            --shadow-large: 0 10px 15px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3);
+            --glow-effect: 0 0 0 3px rgba(255, 112, 67, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            transition: var(--transition-smooth);
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+
+        /* Improved typography for better legibility */
+        .sonora-page h1, .sonora-page h2, .sonora-page h3, .sonora-page h4, .sonora-page h5, .sonora-page h6 {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* Fallback for better accessibility */
+        @supports not (-webkit-background-clip: text) {
+            .sonora-page h1, .sonora-page h2, .sonora-page h3, .sonora-page h4, .sonora-page h5, .sonora-page h6 {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        /* Enhanced Header */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 100;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link, .nav-logo {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+        .nav-logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Fallback for nav logo */
+        @supports not (-webkit-background-clip: text) {
+            .nav-logo {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        .theme-toggle {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: var(--glow-effect);
+        }
+
+        /* Enhanced Support Container */
         .support-container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 120px 1.5rem 4rem;
             line-height: 1.6;
         }
-        
+
         .support-header {
             text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
-            background: linear-gradient(135deg, #007AFF, #5856D6);
-            border-radius: 16px;
-            color: white;
+            margin-bottom: 4rem;
+            padding: 4rem 2rem;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            color: var(--text-primary);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
         }
-        
+
+        .support-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card);
+            opacity: 0.5;
+        }
+
+        .support-header > * {
+            position: relative;
+            z-index: 1;
+        }
+
         .support-header h1 {
             margin: 0;
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 700;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
         }
-        
+
         .support-header p {
-            margin: 0.5rem 0 0;
+            margin: 0;
             opacity: 0.9;
-            font-size: 1.1rem;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
         }
-        
+
+        /* Enhanced Quick Links */
         .quick-links {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
         }
-        
+
         .quick-link {
-            background: var(--bg-secondary);
-            padding: 1.5rem;
-            border-radius: 12px;
+            background: var(--bg-tertiary);
+            padding: 2rem;
+            border-radius: 16px;
             text-decoration: none;
             color: var(--text-primary);
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .quick-link:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,122,255,0.2);
-        }
-        
-        .quick-link-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        
-        .quick-link h3 {
-            margin: 0;
-            color: var(--text-primary);
-            font-size: 1.2rem;
-        }
-        
-        .quick-link p {
-            margin: 0.5rem 0 0;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-        
-        .section {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .section h2 {
-            color: var(--text-primary);
-            margin: 0 0 1rem;
-            font-size: 1.5rem;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-        }
-        
-        .faq-item {
-            margin: 1.5rem 0;
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 8px;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            position: relative;
             overflow: hidden;
         }
-        
+
+        .quick-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .quick-link:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-large);
+            border-color: var(--primary-color);
+        }
+
+        .quick-link:hover::before {
+            opacity: 1;
+        }
+
+        .quick-link > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .quick-link-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Fallback for quick link icon */
+        @supports not (-webkit-background-clip: text) {
+            .quick-link-icon {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
+        .quick-link h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-link p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Enhanced Sections */
+        .section {
+            margin: 3rem 0;
+            padding: 3rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card);
+            opacity: 0.3;
+            transition: var(--transition-smooth);
+        }
+
+        .section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section h2 {
+            margin: 0 0 1.5rem;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .section h3 {
+            margin: 2rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .section p, .section li {
+            color: var(--text-secondary);
+            margin: 0.75rem 0;
+            line-height: 1.7;
+        }
+
+        .section ul, .section ol {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        /* Enhanced FAQ Items */
+        .faq-item {
+            margin: 2rem 0;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-color);
+        }
+
         .faq-question {
-            background: var(--bg-primary);
-            padding: 1rem;
+            background: var(--bg-tertiary);
+            padding: 1.5rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background-color 0.2s ease;
+            transition: var(--transition-smooth);
+            border: none;
+            width: 100%;
+            text-align: left;
         }
-        
+
         .faq-question:hover {
-            background: rgba(0,122,255,0.05);
+            background: var(--gradient-card);
         }
-        
+
         .faq-question h3 {
             margin: 0;
-            color: var(--text-primary);
-            font-size: 1.1rem;
-        }
-        
-        .faq-toggle {
             font-size: 1.2rem;
-            color: var(--accent-color);
-            transition: transform 0.2s ease;
+            flex: 1;
         }
-        
-        .faq-answer {
-            padding: 1rem;
-            background: var(--bg-secondary);
-            color: var(--text-secondary);
-            display: none;
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: var(--transition-smooth);
+            margin-left: 1rem;
         }
-        
-        .faq-answer.active {
-            display: block;
-        }
-        
+
         .faq-item.active .faq-toggle {
             transform: rotate(180deg);
         }
-        
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        /* Enhanced Troubleshooting Steps */
         .troubleshoot-steps {
-            background: rgba(255, 149, 0, 0.1);
-            border: 1px solid rgba(255, 149, 0, 0.3);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-        }
-        
-        .troubleshoot-steps ol {
-            margin: 0.5rem 0;
-            padding-left: 1.5rem;
-        }
-        
-        .contact-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .contact-method {
-            background: var(--bg-primary);
+            background: var(--bg-tertiary);
             border: 2px solid var(--accent-color);
             border-radius: 12px;
             padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .troubleshoot-steps::before {
+            content: '🔧';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--bg-primary);
+            padding: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .troubleshoot-steps ol, .troubleshoot-steps ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        /* Enhanced Contact Methods */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-method {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
             text-align: center;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .contact-method::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-large);
+            border-color: var(--primary-color);
+        }
+
+        .contact-method:hover::before {
+            opacity: 1;
+        }
+
+        .contact-method > * {
+            position: relative;
+            z-index: 1;
+        }
+
         .contact-method-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
             display: block;
-            color: var(--accent-color);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
+
+        /* Fallback for contact method icon */
+        @supports not (-webkit-background-clip: text) {
+            .contact-method-icon {
+                color: var(--primary-color);
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+        }
+
         .contact-method h3 {
-            margin: 0 0 0.5rem;
-            color: var(--text-primary);
+            margin: 0 0 1rem;
+            font-size: 1.4rem;
         }
-        
+
         .contact-method p {
-            margin: 0;
+            margin: 0.5rem 0;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
-        
+
         .contact-method a {
-            color: var(--accent-color);
+            color: var(--primary-color);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            transition: var(--transition-fast);
         }
-        
+
         .contact-method a:hover {
+            color: var(--primary-hover);
             text-decoration: underline;
         }
-        
+
+        /* Enhanced Navigation Links */
         .nav-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
+            gap: 1.5rem;
+            margin: 3rem 0;
             flex-wrap: wrap;
         }
-        
+
         .nav-links a {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--gradient-primary);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            font-weight: 500;
+            border-radius: 12px;
+            transition: var(--transition-smooth);
+            font-weight: 600;
+            box-shadow: var(--shadow-medium);
         }
-        
+
         .nav-links a:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,122,255,0.3);
+            box-shadow: var(--shadow-large);
+            color: white;
         }
-        
+
+        /* Enhanced System Requirements */
         .system-requirements {
-            background: rgba(0, 122, 255, 0.1);
-            border: 1px solid rgba(0, 122, 255, 0.3);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
+            background: var(--bg-tertiary);
+            border: 2px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
         }
-        
+
+        .system-requirements::before {
+            content: '📱';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--bg-primary);
+            padding: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient-primary);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1.5rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            margin: 0 1.5rem;
+            color: var(--text-muted);
+        }
+
+        /* Enhanced Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced Responsive Design */
         @media (max-width: 768px) {
             .support-container {
-                margin: 1rem auto;
-                padding: 0 0.5rem;
+                padding: 100px 1rem 2rem;
+            }
+            
+            .support-header {
+                padding: 3rem 1.5rem;
+                margin-bottom: 3rem;
+            }
+            
+            .nav-container {
+                padding: 1rem;
+            }
+            
+            .nav-links-container {
+                gap: 1rem;
             }
             
             .section {
-                padding: 1rem;
+                padding: 2rem;
             }
             
             .quick-links {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .quick-link {
+                padding: 1.5rem;
             }
             
             .contact-methods {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
+            
+            .contact-method {
+                padding: 2rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links a {
+                padding: 0.875rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .support-header h1 {
+                font-size: 2rem;
+            }
+            
+            .support-header p {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .quick-link {
+                padding: 1.25rem;
+            }
+            
+            .faq-question {
+                padding: 1.25rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Enhanced Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Enhanced Focus States */
+        .theme-toggle:focus,
+        .nav-links a:focus,
+        .quick-link:focus,
+        .faq-question:focus,
+        .contact-method:focus {
+            outline: 3px solid var(--primary-color);
+            outline-offset: 2px;
         }
     </style>
 </head>
@@ -264,8 +800,8 @@
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">Samuel Kahessay</a>
             <div class="nav-links-container">
-                <a href="../sonora/index.html" class="nav-link">Sonora</a>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <a href="index.html" class="nav-link">Sonora</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle between dawn and dusk themes">
                     <span class="theme-icon">🌙</span>
                 </button>
             </div>
@@ -275,7 +811,7 @@
     <div class="support-container">
         <header class="support-header">
             <h1>🎧 We're here to listen</h1>
-            <p>Your thoughts matter to us—let's make sure Sonora serves you well</p>
+            <p>Your thoughts matter—here’s how to use Sonora effectively</p>
         </header>
 
         <div class="nav-links">
@@ -288,27 +824,27 @@
             <a href="#getting-started" class="quick-link">
                 <span class="quick-link-icon">🚀</span>
                 <h3>Getting Started</h3>
-                <p>Learn the basics of using Sonora</p>
+                <p>Learn the fundamentals of using Sonora to capture and analyze your voice</p>
             </a>
             <a href="#recording" class="quick-link">
                 <span class="quick-link-icon">🎤</span>
-                <h3>Recording Help</h3>
-                <p>Recording tips and troubleshooting</p>
+                <h3>Recording Excellence</h3>
+                <p>Master voice recording techniques and troubleshoot audio issues</p>
             </a>
             <a href="#transcription" class="quick-link">
                 <span class="quick-link-icon">📝</span>
-                <h3>Transcription</h3>
-                <p>Understanding transcription features</p>
+                <h3>Transcription Magic</h3>
+                <p>Understanding and optimizing AI-powered speech-to-text features</p>
             </a>
             <a href="#ai-analysis" class="quick-link">
                 <span class="quick-link-icon">🧠</span>
-                <h3>AI Analysis</h3>
-                <p>Making the most of AI insights</p>
+                <h3>AI Insights</h3>
+                <p>Unlock the full potential of intelligent voice analysis and discovery</p>
             </a>
             <a href="#privacy-data" class="quick-link">
-                <span class="quick-link-icon">🔐</span>
-                <h3>Privacy & Data</h3>
-                <p>How we protect your information</p>
+                <span class="quick-link-icon">🔒</span>
+                <h3>Privacy & Security</h3>
+                <p>How we protect your voice and personal information with care</p>
             </a>
         </div>
 
@@ -316,80 +852,87 @@
             <h2>🚀 Getting Started with Sonora</h2>
             
             <div class="system-requirements">
-                <p><strong>📱 System Requirements:</strong></p>
+                <p><strong>System Requirements:</strong></p>
                 <ul>
-                    <li>iOS 17.0 or later</li>
+                    <li>iOS 17.0 or later for full feature compatibility</li>
                     <li>iPhone (optimized for iPhone 15 Pro with Dynamic Island)</li>
-                    <li>Microphone access permission</li>
-                    <li>Internet connection for transcription and AI analysis</li>
+                    <li>Microphone access permission for voice recording</li>
+                    <li>Stable internet connection for transcription and AI analysis</li>
+                    <li>At least 100MB of free storage space</li>
                 </ul>
             </div>
 
-            <h3>First Steps</h3>
+            <h3>Your First Steps with Sonora</h3>
             <ol>
-                <li><strong>Download & Install:</strong> Get Sonora from the App Store</li>
-                <li><strong>Grant Permissions:</strong> Allow microphone access when prompted</li>
-                <li><strong>Start Recording:</strong> Tap the record button to create your first memo</li>
-                <li><strong>Explore Features:</strong> Try transcription and AI analysis</li>
+                <li><strong>Download & Install:</strong> Get Sonora from the App Store and install on your iPhone</li>
+                <li><strong>Grant Permissions:</strong> Allow microphone access when prompted for voice recording</li>
+                <li><strong>Start Recording:</strong> Tap the elegant record button to create your first voice memo</li>
+                <li><strong>Explore AI Features:</strong> Try transcription and discover insights in your recordings</li>
+                <li><strong>Customize Settings:</strong> Adjust Live Activities and notification preferences</li>
             </ol>
+
+            <h3>Understanding the Interface</h3>
+            <p>Sonora follows Apple's Human Interface Guidelines and feels natural on iPhone. The recording interface includes a record button, real-time waveform, and Dynamic Island integration.</p>
         </section>
 
         <section class="section" id="recording">
-            <h2>🎤 Recording & Audio</h2>
+            <h2>🎤 Recording & Audio Excellence</h2>
             
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Why is there a 3-minute recording limit?</h3>
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <h3>Why does Sonora limit recordings to 3 minutes?</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
-                    <p>Sonora is designed for quick voice memos and focused thoughts. The 3-minute limit encourages concise, actionable recordings while ensuring optimal performance for transcription and AI analysis. This also helps preserve battery life and storage space.</p>
+                    <p>Sonora is designed for focused, short voice memos. The 3‑minute limit encourages concise recordings and helps performance, battery life, and storage.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Can I record in the background or with the screen locked?</h3>
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <h3>Can I record with the screen locked or in the background?</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
-                    <p>Yes! Sonora supports background recording with Live Activities. You'll see a real-time recording indicator in your Dynamic Island and on the lock screen. The recording will continue even if you switch apps or lock your device.</p>
+                    <p>Absolutely. Sonora supports background recording with Live Activities integration. You'll see a real-time recording indicator in your Dynamic Island and on the lock screen. Recording can continue even if you switch apps, lock your device, or receive notifications.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>How can I improve recording quality?</h3>
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <h3>How can I achieve the best recording quality?</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
                     <div class="troubleshoot-steps">
-                        <p><strong>📢 Tips for Better Audio:</strong></p>
+                        <p><strong>Tips for Crystal-Clear Audio:</strong></p>
                         <ul>
-                            <li>Hold your iPhone 6-8 inches from your mouth</li>
-                            <li>Speak clearly and at a normal pace</li>
-                            <li>Find a quiet environment when possible</li>
-                            <li>Avoid covering the microphone with your fingers</li>
+                            <li>Hold your iPhone 6–8 inches from your mouth for good pickup</li>
+                            <li>Speak clearly and at a natural, conversational pace</li>
+                            <li>Choose a quiet environment when possible to minimize background noise</li>
+                            <li>Avoid covering the microphone with your fingers or case</li>
                             <li>Ensure your device's microphone is clean and unobstructed</li>
+                            <li>Consider using AirPods Pro for even better audio quality in noisy environments</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>What if my recording fails or cuts off?</h3>
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <h3>What should I do if my recording fails or cuts off unexpectedly?</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
                     <div class="troubleshoot-steps">
-                        <p><strong>🔧 Troubleshooting Steps:</strong></p>
+                        <p><strong>Recording Troubleshooting Steps:</strong></p>
                         <ol>
-                            <li>Check that microphone permissions are enabled in Settings > Sonora</li>
-                            <li>Ensure you have sufficient storage space on your device</li>
-                            <li>Close other apps that might be using the microphone</li>
-                            <li>Restart the Sonora app</li>
-                            <li>If issues persist, restart your iPhone</li>
+                            <li>Verify microphone permissions are enabled in Settings > Privacy & Security > Microphone > Sonora</li>
+                            <li>Check available storage space—ensure at least 100MB free on your device</li>
+                            <li>Close other apps that might be competing for microphone access</li>
+                            <li>Force close and restart the Sonora app</li>
+                            <li>Restart your iPhone to clear any system-level audio conflicts</li>
+                            <li>Update to the latest version of Sonora from the App Store</li>
                         </ol>
                     </div>
                 </div>
@@ -397,170 +940,196 @@
         </section>
 
         <section class="section" id="transcription">
-            <h2>📝 Transcription & Text</h2>
+            <h2>📝 Transcription & Text Magic</h2>
             
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                     <h3>What languages are supported for transcription?</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
-                    <p>Sonora supports transcription in 100+ languages including English, Spanish, French, German, Chinese, Japanese, Arabic, and many more. The transcription service automatically detects the spoken language in most cases.</p>
+                    <p>Sonora supports transcription in many languages and dialects, including English, Spanish, French, German, Chinese (Mandarin & Cantonese), Japanese, Arabic, Portuguese, and Russian. The service can automatically detect the spoken language in most cases.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Why is my transcription not accurate?</h3>
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <h3>Why might my transcription not be perfectly accurate?</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
-                    <p>Transcription accuracy depends on several factors:</p>
+                    <p>Transcription accuracy depends on several key factors:</p>
                     <ul>
-                        <li><strong>Audio Quality:</strong> Clear speech in quiet environments works best</li>
-                        <li><strong>Speaking Pace:</strong> Normal, conversational speed is ideal</li>
-                        <li><strong>Language:</strong> Some languages may have higher accuracy than others</li>
-                        <li><strong>Technical Terms:</strong> Specialized vocabulary may be less accurate</li>
-                        <li><strong>Accents:</strong> Strong regional accents might affect accuracy</li>
+                        <li><strong>Audio Quality:</strong> Clear speech in quiet environments can improve results</li>
+                        <li><strong>Speaking Pace:</strong> Normal, conversational speed is ideal for accurate transcription</li>
+                        <li><strong>Language Support:</strong> Some languages may have higher accuracy rates than others</li>
+                        <li><strong>Technical Terminology:</strong> Specialized vocabulary or jargon may be less accurately transcribed</li>
+                        <li><strong>Accents & Dialects:</strong> Strong regional accents might affect transcription accuracy</li>
+                        <li><strong>Background Noise:</strong> Ambient sounds can interfere with speech recognition</li>
                     </ul>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Can I edit transcriptions?</h3>
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <h3>Can I edit or correct transcriptions within the app?</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
-                    <p>Currently, Sonora displays transcriptions as generated by our AI service. If you need to make corrections, you can copy the text and edit it in another app. We're considering adding in-app editing in future updates based on user feedback.</p>
+                    <p>Currently, Sonora displays transcriptions as generated by our advanced AI service to maintain the integrity of the original analysis. If you need to make corrections, you can easily copy the text and edit it in your preferred text editor. We're actively considering adding in-app editing capabilities in future updates based on user feedback and requests.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>How long does transcription take?</h3>
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <h3>How long does the transcription process typically take?</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
-                    <p>Transcription typically takes 10-30 seconds for a 3-minute recording, depending on your internet connection speed and server load. The process happens automatically after recording, and you'll see a progress indicator during transcription.</p>
+                    <p>Transcription time depends on connection, server load, and content. The process starts automatically after recording, and a progress indicator is shown.</p>
                 </div>
             </div>
         </section>
 
         <section class="section" id="ai-analysis">
-            <h2>🧠 AI Analysis & Insights</h2>
+            <h2>🧠 AI Analysis & Intelligent Insights</h2>
             
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                     <h3>What types of AI analysis does Sonora provide?</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
-                    <p>Sonora offers several AI-powered insights:</p>
+                    <p>Sonora can generate AI‑powered insights from transcripts:</p>
                     <ul>
-                        <li><strong>📄 TLDR Summaries:</strong> Concise summaries of your recording content</li>
-                        <li><strong>🎯 Theme Extraction:</strong> Key topics and themes identified</li>
-                        <li><strong>✅ Action Items:</strong> Tasks and to-dos mentioned in your recording</li>
-                        <li><strong>💡 Key Insights:</strong> Important points and takeaways</li>
+                        <li><strong>📄 TLDR Summaries:</strong> Concise, intelligent summaries that capture the essence of your recording</li>
+                        <li><strong>🎯 Theme Extraction:</strong> Identifies key topics, themes, and concepts mentioned in your voice memo</li>
+                        <li><strong>✅ Action Items:</strong> Automatically detects tasks, to-dos, and actionable items from your speech</li>
+                        <li><strong>💡 Key Insights:</strong> Highlights important points and decisions</li>
+                        <li><strong>📊 Sentiment Analysis:</strong> Understanding the emotional tone and context of your thoughts</li>
+                        <li><strong>🏷️ Smart Tagging:</strong> Automatic categorization to help organize your voice library</li>
                     </ul>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>How accurate is the AI analysis?</h3>
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <h3>How accurate and reliable is the AI analysis?</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
-                    <p>AI analysis quality depends on the clarity of your transcription and the content structure. The AI works best with:</p>
+                    <p>Our AI analysis quality depends on several factors, and we're transparent about both strengths and limitations:</p>
                     <ul>
-                        <li>Clear, structured speech</li>
-                        <li>Specific topics or objectives</li>
-                        <li>Professional or organized content</li>
-                        <li>Recordings that mention actionable items or decisions</li>
+                        <li><strong>Performance:</strong> Clear, structured speech with specific topics can yield better results</li>
+                        <li><strong>Content Structure:</strong> Recordings with defined objectives or organized thoughts are analyzed most effectively</li>
+                        <li><strong>Professional Context:</strong> Work-related discussions and decision-making content typically receive highly accurate analysis</li>
+                        <li><strong>Action-Oriented Speech:</strong> Recordings that mention specific tasks, deadlines, or decisions are particularly well-suited for AI insights</li>
+                        <li><strong>Continuous Improvement:</strong> Our AI models are regularly updated to improve accuracy and understanding</li>
                     </ul>
-                    <p>Results may vary for casual conversations or highly technical content.</p>
+                    <p>Results may vary for highly casual conversations, stream-of-consciousness thoughts, or highly technical content in specialized fields.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Can I disable AI analysis?</h3>
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <h3>Can I control when AI analysis runs or disable it entirely?</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
-                    <p>AI analysis is optional and you can choose not to run it for any particular recording. The analysis only runs when you specifically request it, giving you full control over when and how your content is analyzed.</p>
+                    <p>Absolutely. Sonora puts you in complete control of your AI analysis experience. The analysis is entirely optional and only runs when you specifically request it, giving you full autonomy over when and how your content is analyzed. You can choose to:</p>
+                    <ul>
+                        <li>Run analysis immediately after recording</li>
+                        <li>Review the transcription first, then decide on analysis</li>
+                        <li>Skip analysis entirely for personal or sensitive recordings</li>
+                        <li>Batch analyze multiple recordings at once</li>
+                        <li>Set preferences for automatic analysis based on content type</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <section class="section" id="privacy-data">
-            <h2>🔐 Privacy & Data</h2>
-            <p>Your voice belongs to you. Sonora does not sell or share your data for advertising, and we don’t use third‑party trackers. Here’s how we handle your information:</p>
+            <h2>🔒 Privacy & Data Protection</h2>
+            <p>Your voice belongs to you, and we take that responsibility seriously. Sonora is built with privacy-by-design principles, ensuring your personal thoughts and recordings are protected at every step.</p>
+            
+            <h3>How We Protect Your Voice</h3>
             <ul>
-                <li><strong>On‑device first:</strong> Recordings and transcripts are stored on your device unless you choose to export them</li>
-                <li><strong>Secure processing:</strong> Audio is sent to a secure transcription service and deleted after processing</li>
-                <li><strong>Text analysis:</strong> AI insights are generated from text only</li>
-                <li><strong>Your control:</strong> You can delete any memo at any time</li>
+                <li><strong>On-Device First:</strong> Recordings and transcripts are stored locally on your iPhone unless you choose to export them</li>
+                <li><strong>Secure Processing:</strong> Audio is sent to our secure, encrypted transcription service and permanently deleted after processing</li>
+                <li><strong>Text-Only Analysis:</strong> AI insights are generated from transcribed text only—never from your original audio</li>
+                <li><strong>No Third-Party Tracking:</strong> We don't use analytics services that track your behavior or sell your data</li>
+                <li><strong>Complete Control:</strong> You can delete any memo and its associated data at any time with a simple swipe</li>
+                <li><strong>Transparent Processing:</strong> Clear indicators show when your data is being processed and when it's complete</li>
             </ul>
-            <p>For full details, see the <a href="privacy-policy.html">Privacy Policy</a>.</p>
+            
+            <h3>Data Retention Policy</h3>
+            <ul>
+                <li><strong>Local Storage:</strong> Your recordings remain on your device indefinitely until you choose to delete them</li>
+                <li><strong>Server Processing:</strong> Audio files are automatically deleted from our servers within minutes of transcription completion</li>
+                <li><strong>No Permanent Cloud Storage:</strong> We never store your voice recordings in the cloud permanently</li>
+                <li><strong>Anonymized Logs:</strong> Technical logs for debugging are anonymized and retained for only 30 days maximum</li>
+            </ul>
+            
+            <p>For complete details about our privacy practices, please review our comprehensive <a href="privacy-policy.html">Privacy Policy</a>.</p>
         </section>
 
         <section class="section">
-            <h2>🔧 Troubleshooting</h2>
+            <h2>🔧 Troubleshooting & Technical Support</h2>
             
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>The app crashes when I try to record</h3>
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <h3>The app crashes when I try to start recording</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
                     <div class="troubleshoot-steps">
-                        <p><strong>🔧 Try these solutions:</strong></p>
+                        <p><strong>Crash Resolution Steps:</strong></p>
                         <ol>
-                            <li>Force close and restart the Sonora app</li>
-                            <li>Check if you have sufficient storage space (at least 100MB free)</li>
-                            <li>Verify microphone permissions in Settings > Privacy & Security > Microphone</li>
+                            <li>Force close Sonora and restart the app completely</li>
+                            <li>Verify you have sufficient storage space (minimum 100MB free recommended)</li>
+                            <li>Check microphone permissions in Settings > Privacy & Security > Microphone > Sonora</li>
                             <li>Update to the latest version of Sonora from the App Store</li>
-                            <li>Restart your iPhone</li>
-                            <li>If the problem persists, contact support with your device model and iOS version</li>
+                            <li>Restart your iPhone to clear any system-level conflicts</li>
+                            <li>If problems persist, contact our support team with your device model and iOS version</li>
                         </ol>
                     </div>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Transcription is taking too long or fails</h3>
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <h3>Transcription is taking too long or failing to complete</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
                     <div class="troubleshoot-steps">
-                        <p><strong>🌐 Network-related issues:</strong></p>
+                        <p><strong>Network & Transcription Issues:</strong></p>
                         <ol>
-                            <li>Check your internet connection (Wi-Fi or cellular)</li>
-                            <li>Try switching between Wi-Fi and cellular data</li>
-                            <li>Close other apps that might be using bandwidth</li>
-                            <li>Wait a few minutes and try again (servers may be busy)</li>
-                            <li>Ensure you're not in Low Power Mode</li>
+                            <li>Check your internet connection stability (both Wi-Fi and cellular)</li>
+                            <li>Try switching between Wi-Fi and cellular data to test connectivity</li>
+                            <li>Close bandwidth-intensive apps that might be competing for connection</li>
+                            <li>Wait a few minutes and retry—our servers may be experiencing high demand</li>
+                            <li>Ensure Low Power Mode is disabled, as it can throttle network requests</li>
+                            <li>Try recording a shorter test memo to isolate the issue</li>
                         </ol>
                     </div>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Live Activities aren't showing up</h3>
+                <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                    <h3>Live Activities aren't appearing on my lock screen</h3>
                     <span class="faq-toggle">▼</span>
-                </div>
+                </button>
                 <div class="faq-answer">
                     <div class="troubleshoot-steps">
-                        <p><strong>📱 Check your settings:</strong></p>
+                        <p><strong>Live Activities Configuration:</strong></p>
                         <ol>
-                            <li>Go to Settings > Sonora and ensure "Live Activities" is enabled</li>
-                            <li>Check Settings > Face ID & Passcode > Allow Access When Locked > "Live Activities"</li>
-                            <li>Verify you're on iOS 17.0 or later</li>
-                            <li>Restart the app and try recording again</li>
+                            <li>Navigate to Settings > Sonora and ensure "Live Activities" is enabled</li>
+                            <li>Check Settings > Face ID & Passcode > "Allow Access When Locked" > ensure "Live Activities" is turned on</li>
+                            <li>Verify you're running iOS 17.0 or later—Live Activities require this minimum version</li>
+                            <li>Restart the Sonora app and attempt a new recording</li>
+                            <li>If you have a Dynamic Island-compatible device, check that Dynamic Island is enabled in settings</li>
                         </ol>
                     </div>
                 </div>
@@ -568,133 +1137,310 @@
         </section>
 
         <section class="section">
-            <h2>📞 Contact Support</h2>
-            <p>Still need help? We're here to assist you!</p>
+            <h2>📞 Contact Our Support Team</h2>
+            <p>Still need assistance? Our dedicated support team is here to help you get the most out of Sonora.</p>
             
             <div class="contact-methods">
                 <div class="contact-method">
                     <span class="contact-method-icon">✉️</span>
                     <h3>Email Support</h3>
-                    <p>Get detailed help with technical issues</p>
-                    <a href="mailto:support@sonora-app.com">support@sonora-app.com</a>
+                    <p>Get detailed help with technical issues, feature requests, or general questions</p>
+                    <a href="mailto:kahessay@icloud.com">kahessay [at] icloud [dot] com</a>
                 </div>
                 
                 <div class="contact-method">
                     <span class="contact-method-icon">💡</span>
                     <h3>Feature Requests</h3>
-                    <p>Have an idea? We’d love to hear it</p>
-                    <a href="mailto:support@sonora-app.com?subject=Sonora%20Feature%20Request">Email a Request</a>
+                    <p>Have an idea for improving Sonora? We'd love to hear your thoughts</p>
+                    <a href="mailto:kahessay@icloud.com?subject=Sonora%20Feature%20Request">Share Your Ideas</a>
                 </div>
                 
                 <div class="contact-method">
                     <span class="contact-method-icon">📖</span>
-                    <h3>Help Center</h3>
-                    <p>FAQs, troubleshooting, and policies</p>
-                    <a href="support.html">Browse Support</a>
+                    <h3>Documentation</h3>
+                    <p>Comprehensive guides, FAQs, and troubleshooting resources</p>
+                    <a href="support.html">Browse Support Docs</a>
                 </div>
             </div>
 
             <div class="troubleshoot-steps">
-                <p><strong>📋 When contacting support, please include:</strong></p>
+                <p><strong>When contacting support, please include:</strong></p>
                 <ul>
-                    <li>Your iPhone model and iOS version</li>
-                    <li>Sonora app version (found in Settings > Sonora)</li>
-                    <li>Description of the issue and steps to reproduce</li>
-                    <li>Any error messages you've seen</li>
-                    <li>Screenshots or screen recordings if applicable</li>
+                    <li>Your iPhone model and iOS version (found in Settings > General > About)</li>
+                    <li>Sonora app version (found in Settings > Sonora or App Store)</li>
+                    <li>Detailed description of the issue and steps to reproduce the problem</li>
+                    <li>Any error messages or unexpected behavior you've observed</li>
+                    <li>Screenshots or screen recordings if they help illustrate the issue</li>
+                    <li>When the issue first started occurring and any recent changes to your device</li>
                 </ul>
             </div>
         </section>
 
         <section class="section">
-            <h2>📱 App Information</h2>
+            <h2>📱 App Information & Compatibility</h2>
             <div class="system-requirements">
-                <h3>Current Version</h3>
+                <h3>Current Version Details</h3>
                 <ul>
-                    <li><strong>Version:</strong> 1.0.0 (Check App Store for latest)</li>
-                    <li><strong>Minimum iOS:</strong> 17.0</li>
-                    <li><strong>Optimized for:</strong> iPhone 15 Pro, Dynamic Island</li>
-                    <li><strong>File Size:</strong> ~50MB</li>
-                    <li><strong>Languages:</strong> English (Interface), 100+ for transcription</li>
+                    <li><strong>Version:</strong> 1.0.0 (Check App Store for latest updates)</li>
+                    <li><strong>Minimum iOS:</strong> 17.0 for full feature compatibility</li>
+                    <li><strong>Optimized for:</strong> iPhone 15 Pro, Dynamic Island, Live Activities</li>
+                    <li><strong>Download Size:</strong> Approximately 50MB</li>
+                    <li><strong>Interface Languages:</strong> English</li>
+                    <li><strong>Transcription Languages:</strong> 100+ supported languages and dialects</li>
+                    <li><strong>Accessibility:</strong> Full VoiceOver support, Dynamic Type, High Contrast</li>
                 </ul>
             </div>
 
-            <h3>What's New</h3>
-            <p>Stay updated with the latest features and improvements by checking the App Store regularly. We frequently release updates with performance improvements, bug fixes, and new features based on user feedback.</p>
+            <h3>What's New & Updates</h3>
+            <p>Stay current with the latest Sonora features and improvements by enabling automatic updates in the App Store. We frequently release updates containing performance enhancements, bug fixes, and new features based on your valuable feedback and suggestions.</p>
+            
+            <h3>Compatibility Notes</h3>
+            <ul>
+                <li><strong>Dynamic Island:</strong> Full integration on iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15 series</li>
+                <li><strong>Live Activities:</strong> Available on all devices running iOS 17.0 or later</li>
+                <li><strong>Transcription:</strong> Requires internet connection; works on all supported devices</li>
+                <li><strong>AI Analysis:</strong> Cloud-based processing compatible with all iOS 17+ devices</li>
+            </ul>
         </section>
 
         <div class="nav-links">
-            <a href="index.html">← Back to Sonora</a>
+            <a href="index.html">← Return to Sonora</a>
             <a href="privacy-policy.html">Privacy Policy</a>
             <a href="terms-of-service.html">Terms of Service</a>
         </div>
     </div>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Sonora</h4>
-                    <p>Modern iOS Voice Memo App with AI Analysis</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="support.html">Help Center</a></li>
-                        <li><a href="mailto:support@sonora-app.com">Email Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    </ul>
-                </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sonora</h4>
+                <p style="color: var(--text-secondary); line-height: 1.6;">
+                    Voice memos for iPhone.
+                    Transforming thoughts into insights, one recording at a time.
+                </p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Samuel Kahessay. All rights reserved.</p>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="support.html">Help Center</a></li>
+                    <li><a href="mailto:kahessay@icloud.com">Email Support</a></li>
+                    <li><a href="mailto:kahessay@icloud.com?subject=Feature%20Request">Feature Requests</a></li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Developer</h4>
+                <ul>
+                    <li><a href="../index.html">Samuel Kahessay</a></li>
+                    <li><a href="../index.html#projects">Other Projects</a></li>
+                    <li><a href="../index.html#contact">Get in Touch</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Samuel Kahessay. Crafted with passion for iPhone users who value both privacy and intelligence.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                Supporting your voice from dawn's first light to dusk's gentle embrace.
+            </p>
         </div>
     </footer>
 
-    <script src="../style.js"></script>
     <script>
-        function toggleFAQ(element) {
-            const faqItem = element.parentElement;
-            const answer = faqItem.querySelector('.faq-answer');
-            const isActive = faqItem.classList.contains('active');
-            
-            // Close all other FAQs
-            document.querySelectorAll('.faq-item.active').forEach(item => {
-                if (item !== faqItem) {
-                    item.classList.remove('active');
-                    item.querySelector('.faq-answer').classList.remove('active');
+        // Enhanced Theme Manager for Support Page
+        class SupportThemeManager {
+            constructor() {
+                this.theme = localStorage.getItem('theme') || 'light';
+                this.initTheme();
+                this.initThemeToggle();
+            }
+
+            initTheme() {
+                document.documentElement.setAttribute('data-theme', this.theme);
+                this.updateThemeIcon();
+            }
+
+            initThemeToggle() {
+                const themeToggle = document.getElementById('theme-toggle');
+                if (themeToggle) {
+                    themeToggle.addEventListener('click', () => this.toggleTheme());
                 }
-            });
-            
-            // Toggle current FAQ
-            if (isActive) {
-                faqItem.classList.remove('active');
-                answer.classList.remove('active');
-            } else {
-                faqItem.classList.add('active');
-                answer.classList.add('active');
+            }
+
+            toggleTheme() {
+                this.theme = this.theme === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', this.theme);
+                localStorage.setItem('theme', this.theme);
+                this.updateThemeIcon();
+            }
+
+            updateThemeIcon() {
+                const themeIcon = document.querySelector('.theme-icon');
+                if (themeIcon) {
+                    themeIcon.textContent = this.theme === 'light' ? '🌙' : '☀️';
+                }
             }
         }
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        // Enhanced FAQ Toggle Function
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const toggle = button.querySelector('.faq-toggle');
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQs with smooth animation
+            document.querySelectorAll('.faq-item.active').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    const otherAnswer = item.querySelector('.faq-answer');
+                    const otherButton = item.querySelector('.faq-question');
+                    
+                    otherAnswer.classList.remove('active');
+                    otherButton.setAttribute('aria-expanded', 'false');
                 }
             });
+            
+            // Toggle current FAQ with enhanced animation
+            if (isActive) {
+                faqItem.classList.remove('active');
+                answer.classList.remove('active');
+                button.setAttribute('aria-expanded', 'false');
+            } else {
+                faqItem.classList.add('active');
+                answer.classList.add('active');
+                button.setAttribute('aria-expanded', 'true');
+                
+                // Smooth scroll to FAQ if needed
+                setTimeout(() => {
+                    const rect = faqItem.getBoundingClientRect();
+                    const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+                    
+                    if (!isVisible) {
+                        faqItem.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'nearest' 
+                        });
+                    }
+                }, 300);
+            }
+        }
+
+        // Enhanced Animation Observer
+        class SupportAnimationObserver {
+            constructor() {
+                this.observeElements();
+            }
+
+            observeElements() {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReducedMotion) return;
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('visible');
+                            }, index * 100);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                // Observe various elements with staggered animations
+                document.querySelectorAll('.fade-in, .quick-link, .section, .contact-method, .faq-item').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+        }
+
+        // Enhanced Smooth Scrolling
+        class SupportScrollManager {
+            constructor() {
+                this.initSmoothScroll();
+                this.initScrollEffects();
+            }
+
+            initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = document.querySelector(anchor.getAttribute('href'));
+                        if (target) {
+                            const headerHeight = document.querySelector('.navbar').offsetHeight;
+                            const targetPosition = target.offsetTop - headerHeight - 20;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+
+            initScrollEffects() {
+                let ticking = false;
+
+                const updateScrollEffects = () => {
+                    const scrollY = window.scrollY;
+                    const navbar = document.querySelector('.navbar');
+                    
+                    if (navbar) {
+                        if (scrollY > 100) {
+                            navbar.style.boxShadow = 'var(--shadow-light)';
+                        } else {
+                            navbar.style.boxShadow = '';
+                        }
+                    }
+                    
+                    ticking = false;
+                };
+
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(updateScrollEffects);
+                        ticking = true;
+                    }
+                });
+            }
+        }
+
+        // Initialize all support page enhancements
+        document.addEventListener('DOMContentLoaded', () => {
+            new SupportThemeManager();
+            new SupportAnimationObserver();
+            new SupportScrollManager();
+
+            // Initialize keyboard navigation for FAQs
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleFAQ(question);
+                    }
+                });
+            });
+
+            // Add loaded class for final animations
+            document.body.classList.add('loaded');
+
+            console.log('🎧 Sonora Support page loaded with enhanced dawn/dusk theming');
+        });
+
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            if ('performance' in window) {
+                const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                console.log(`📞 Support page loaded in ${loadTime}ms`);
+            }
         });
     </script>
 </body>
