@@ -55,6 +55,22 @@ body {
     transition: var(--transition);
 }
 
+/* Link styling for better contrast, esp. in dark mode */
+a {
+    color: var(--primary-color);
+    text-decoration-color: color-mix(in oklab, var(--primary-color) 40%, transparent);
+    text-underline-offset: 3px;
+}
+
+a:hover, a:focus {
+    color: var(--primary-hover);
+    text-decoration-thickness: 2px;
+}
+
+a:visited {
+    color: var(--primary-color);
+}
+
 /* Sonora Pages Typography - Apple's New York Serif */
 .sonora-page {
     font-family: 'New York', 'Charter', 'Georgia', 'Times New Roman', serif;
@@ -70,6 +86,12 @@ body {
     font-family: 'New York', 'Charter', 'Georgia', 'Times New Roman', serif;
     font-weight: 600;
     letter-spacing: -0.01em;
+}
+
+/* Account for fixed navbar on Sonora subpages */
+.sonora-page .legal-container,
+.sonora-page .support-container {
+    margin-top: 6rem;
 }
 
 .sonora-page p {
@@ -115,6 +137,49 @@ body {
 
 [data-theme="dark"] .header {
     background: rgba(17, 24, 39, 0.95);
+}
+
+/* Sonora pages navbar (match header styling) */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 100;
+    transition: var(--transition);
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(17, 24, 39, 0.95);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-link, .nav-logo {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
 }
 
 .nav {
@@ -239,6 +304,8 @@ body {
 .section {
     padding: 4rem 0;
     border-bottom: 1px solid var(--border-color);
+    /* prevent fixed header overlap for in-page anchors */
+    scroll-margin-top: 80px;
 }
 
 .section:last-child {
@@ -389,6 +456,21 @@ body {
     padding: 2rem 0;
     text-align: center;
     color: var(--text-muted);
+}
+
+.footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--primary-color);
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Animations */

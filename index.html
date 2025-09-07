@@ -40,7 +40,7 @@
         <div class="hero-content">
             <h1>Samuel Kahessay</h1>
             <p class="tagline">Software Developer</p>
-            <a href="#about" class="cta-button">
+            <a href="#projects" class="cta-button">
                 <span>Learn More</span>
                 <span>↓</span>
             </a>
@@ -50,12 +50,13 @@
         </div>
     </section>
 
+        <main id="main-content" class="main">
         <!-- Projects Section -->
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-title fade-in">Featured Projects</h2>
                 <div class="projects-grid">
-                    <a href="https://samuelkahessay.github.io/sonora/index.html" 
+                    <a href="sonora/index.html" 
                        class="project-card fade-in" 
                        rel="noopener noreferrer"
                        aria-label="Learn about Sonora app">
@@ -65,7 +66,7 @@
                             Built with attention to performance, scalability, and user experience.
                         </p>
                         <span class="project-link">
-                            View on GitHub →
+                            Explore Sonora →
                         </span>
                     </a>
                     
@@ -220,7 +221,7 @@
 
         // Enhanced accessibility: Skip to main content
         const skipLink = document.createElement('a');
-        skipLink.href = '#about';
+        skipLink.href = '#main-content';
         skipLink.textContent = 'Skip to main content';
         skipLink.className = 'sr-only';
         skipLink.style.cssText = `

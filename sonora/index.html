@@ -21,11 +21,8 @@
     <meta name="twitter:title" content="Sonora - Modern iOS Voice Memo App with AI Analysis">
     <meta name="twitter:description" content="Record 60-second voice memos with AI-powered transcription and analysis. Features Live Activities, Dynamic Island integration, and native iOS design.">
     
-    <!-- Favicon and Touch Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
-    <link rel="manifest" href="../assets/site.webmanifest">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
     
     <!-- Styles -->
     <link rel="stylesheet" href="../style.css">
@@ -99,6 +96,38 @@
             background: transparent;
             color: var(--text-primary);
             transform: translateY(-2px);
+        }
+
+        .app-store-button.is-disabled {
+            opacity: 0.7;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+
+        /* Hero CTA buttons */
+        .btn-primary, .btn-secondary {
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-primary {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: var(--sonora-primary);
+            border-color: #fff;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-2px);
+            transition: var(--transition);
         }
         
         /* Privacy-focused section */
@@ -212,14 +241,13 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="privacy-badge">🔐 Your voice is safe with us</div>
             <h1>Clarity through voice—capture what matters</h1>
             <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
                 Share your thoughts and discover meaningful insights. Every 60-second recording becomes a moment of reflection, transformed through understanding.
             </p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                <a href="#features" class="btn-primary" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px);">What Sonora offers</a>
-                <a href="#download" class="btn-secondary" style="background: white; color: var(--sonora-primary); border: 2px solid white;">Begin your journey</a>
+                <a href="#features" class="btn-primary">What Sonora offers</a>
+                <a href="#download" class="btn-secondary">Begin your journey</a>
             </div>
         </div>
     </section>
@@ -330,13 +358,13 @@
                 
                 <!-- App Store Button Placeholder -->
                 <div style="margin-bottom: 2rem;">
-                    <a href="#" class="app-store-button" style="font-size: 1.125rem; padding: 1rem 2rem;">
-                        📱 Download on the App Store
+                    <a href="#" role="button" aria-disabled="true" tabindex="-1" class="app-store-button is-disabled" style="font-size: 1.125rem; padding: 1rem 2rem;">
+                        📱 Coming soon to the App Store
                     </a>
                 </div>
                 
                 <p style="font-size: 0.875rem; color: var(--text-muted);">
-                    Coming Soon • Optimized for iPhone 15 Pro and Dynamic Island
+                    Preview • Optimized for iPhone 15 Pro and Dynamic Island
                 </p>
             </div>
         </div>
@@ -346,11 +374,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-links">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-                <a href="#support">Support</a>
-                <a href="#contact">Contact</a>
-                <a href="https://github.com/samuelkahessay/sonora" target="_blank">GitHub</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="support.html">Support</a>
+                <a href="../index.html#contact">Contact</a>
             </div>
             <div class="copyright">
                 <p>&copy; 2025 Sonora. Built with ❤️ for iPhone users who value privacy and intelligence.</p>
@@ -370,11 +397,13 @@
         html.setAttribute('data-theme', currentTheme);
         themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
 
+        themeToggle.setAttribute('aria-pressed', currentTheme === 'dark');
         themeToggle.addEventListener('click', () => {
             const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            themeToggle.setAttribute('aria-pressed', newTheme === 'dark');
         });
 
         // Smooth scrolling for anchor links
