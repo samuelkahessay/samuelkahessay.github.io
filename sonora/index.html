@@ -114,10 +114,8 @@
 
         /* Improved typography for better legibility */
         .sonora-page h1, .sonora-page h2, .sonora-page h3, .sonora-page h4, .sonora-page h5, .sonora-page h6 {
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            /* Ensure visible text across browsers */
+            color: var(--text-primary);
             font-weight: 700;
             letter-spacing: -0.02em;
         }
@@ -249,10 +247,8 @@
             font-weight: 900;
             margin-bottom: 1.5rem;
             letter-spacing: -0.03em;
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            /* Solid color for cross-browser visibility */
+            color: var(--text-primary);
             line-height: 0.9;
         }
 
