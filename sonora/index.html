@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonora — Voice Memos</title>
-    <meta name="description" content="Record short voice memos with optional AI summaries. Includes Live Activities, Dynamic Island, and native iOS design.">
+    <title>Sonora — Capture Clarity in Minutes</title>
+    <meta name="description" content="Think out loud and find clarity. Sonora records, transcribes, and gently summarizes short voice sessions—so insights are never lost.">
     <meta name="keywords" content="iOS app, voice memo, AI analysis, transcription, SwiftUI, Live Activities, Dynamic Island, iPhone, Sonora">
     <meta name="author" content="Samuel Kahessay">
     
     <!-- App Store Connect Meta Tags (add your app id when available) -->
     <!-- <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID"> -->
-    <meta property="og:title" content="Sonora — Voice Memos">
-    <meta property="og:description" content="Record voice memos with optional AI summaries. Live Activities and Dynamic Island support.">
+    <meta property="og:title" content="Sonora — Capture Clarity in Minutes">
+    <meta property="og:description" content="Think out loud. Sonora records, transcribes, and gently summarizes short sessions.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://samuelkahessay.github.io/sonora/">
     <meta property="og:site_name" content="Sonora">
     
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sonora — Voice Memos">
-    <meta name="twitter:description" content="Record voice memos with optional AI summaries. Live Activities supported.">
+    <meta name="twitter:title" content="Sonora — Capture Clarity in Minutes">
+    <meta name="twitter:description" content="Think out loud. Sonora records, transcribes, and gently summarizes short sessions.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
@@ -163,25 +163,13 @@
             padding-right: 1.5rem;
         }
 
-        /* Enhanced Logo */
+        /* Enhanced Logo (use solid color for universal visibility) */
         .logo {
             font-size: 1.75rem;
             font-weight: 800;
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
             text-decoration: none;
             transition: var(--transition-smooth);
-        }
-
-        /* Fallback for logo */
-        @supports not (-webkit-background-clip: text) {
-            .logo {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
         }
 
         .logo:hover {
@@ -325,20 +313,8 @@
             font-weight: 800;
             text-align: center;
             margin-bottom: 4rem;
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
             position: relative;
-        }
-
-        /* Fallback for section title */
-        @supports not (-webkit-background-clip: text) {
-            .section-title {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
         }
 
         .section-title::after {
@@ -432,19 +408,7 @@
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Fallback for feature card h3 */
-        @supports not (-webkit-background-clip: text) {
-            .feature-card h3 {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
+            color: var(--text-primary);
         }
 
         .feature-card p {
@@ -478,21 +442,9 @@
         .stat-number {
             font-size: 3rem;
             font-weight: 800;
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary-color);
             margin-bottom: 0.5rem;
             display: block;
-        }
-
-        /* Fallback for stat number */
-        @supports not (-webkit-background-clip: text) {
-            .stat-number {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
         }
 
         .stat-label {
@@ -584,19 +536,6 @@
             color: var(--text-primary);
             margin-bottom: 1rem;
             font-weight: 700;
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Fallback for footer h4 */
-        @supports not (-webkit-background-clip: text) {
-            .footer-section h4 {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
         }
 
         .footer-section ul {
@@ -731,9 +670,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Voice Memos</h1>
+            <h1>Think Out Loud. Find Clarity.</h1>
             <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6; color: var(--text-secondary);">
-                Record short voice memos with optional AI summaries.
+                Capture meaningful thoughts in focused, 3‑minute sessions. Sonora records, transcribes, and gently summarizes—so insights turn into understanding.
             </p>
             <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem;">
                 <a href="#features" class="btn-primary">Discover Features</a>
@@ -848,7 +787,7 @@
     <section id="download" class="section">
         <div class="container">
             <div class="download-section fade-in">
-                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 800; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Get Sonora for iPhone</h2>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 800; color: var(--text-primary);">Get Sonora for iPhone</h2>
                 <p style="color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7;">
                     Available soon on the App Store for iPhone. Requires iOS 17.0 or later for full Live Activities 
                     and Dynamic Island integration. Optimized for the latest iPhone models.

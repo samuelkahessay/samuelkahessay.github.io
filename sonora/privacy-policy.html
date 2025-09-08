@@ -176,19 +176,7 @@
         .nav-logo {
             font-size: 1.75rem;
             font-weight: 800;
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Fallback for nav logo */
-        @supports not (-webkit-background-clip: text) {
-            .nav-logo {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
+            color: var(--text-primary);
         }
 
         .theme-toggle {
@@ -357,22 +345,10 @@
         }
 
         .highlight-box .privacy-icon {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary-color);
             font-size: 1.5rem;
             margin-right: 0.75rem;
             display: inline-block;
-        }
-
-        /* Fallback for privacy icon */
-        @supports not (-webkit-background-clip: text) {
-            .highlight-box .privacy-icon {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
         }
 
         .highlight-box p {
@@ -423,20 +399,7 @@
         }
 
         .contact-info strong {
-            color: var(--text-primary);
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Fallback for contact info strong */
-        @supports not (-webkit-background-clip: text) {
-            .contact-info strong {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
+            color: var(--primary-color);
         }
 
         /* Enhanced Last Updated */
@@ -629,19 +592,7 @@
         .flow-icon {
             font-size: 1.5rem;
             margin-right: 1rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Fallback for flow icon */
-        @supports not (-webkit-background-clip: text) {
-            .flow-icon {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
+            color: var(--primary-color);
         }
 
         .flow-arrow {

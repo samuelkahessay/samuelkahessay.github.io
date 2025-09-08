@@ -176,19 +176,7 @@
         .nav-logo {
             font-size: 1.75rem;
             font-weight: 800;
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Fallback for nav logo */
-        @supports not (-webkit-background-clip: text) {
-            .nav-logo {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
+            color: var(--text-primary);
         }
 
         .theme-toggle {
@@ -357,22 +345,10 @@
         }
 
         .highlight-box .terms-icon {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary-color);
             font-size: 1.5rem;
             margin-right: 0.75rem;
             display: inline-block;
-        }
-
-        /* Fallback for terms icon */
-        @supports not (-webkit-background-clip: text) {
-            .highlight-box .terms-icon {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
         }
 
         .highlight-box p {
@@ -457,20 +433,7 @@
         }
 
         .contact-info strong {
-            color: var(--text-primary);
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Fallback for contact info strong */
-        @supports not (-webkit-background-clip: text) {
-            .contact-info strong {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
+            color: var(--primary-color);
         }
 
         /* Enhanced Last Updated */
@@ -551,37 +514,13 @@
         .service-feature-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Fallback for service feature icon */
-        @supports not (-webkit-background-clip: text) {
-            .service-feature-icon {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
+            color: var(--primary-color);
         }
 
         .service-feature h4 {
             margin: 0 0 0.5rem;
             font-size: 1.1rem;
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Fallback for service feature h4 */
-        @supports not (-webkit-background-clip: text) {
-            .service-feature h4 {
-                color: var(--primary-color);
-                background: none;
-                -webkit-text-fill-color: unset;
-            }
+            color: var(--text-primary);
         }
 
         .service-feature p {
