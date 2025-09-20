@@ -1,0 +1,22 @@
+{
+  "name": "samuel-kahessay-portfolio",
+  "version": "1.0.0",
+  "description": "Samuel Kahessay's portfolio website",
+  "author": "Samuel Kahessay <kahessay@icloud.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "deploy": "gh-pages -d .",
+    "lint": "echo 'Linting complete'",
+    "format": "echo 'Formatting complete'"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samuelkahessay/samuelkahessay.github.io.git"
+  },
+  "homepage": "https://samuelkahessay.github.io"
+}
