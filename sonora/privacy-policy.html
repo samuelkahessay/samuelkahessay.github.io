@@ -750,12 +750,43 @@
                 <li><strong>Temporary Processing:</strong> Audio data exists on our servers only during transcription—typically 10-30 seconds—then is permanently deleted</li>
             </ul>
 
-            <h3>Transcription Modes & Limits</h3>
-            <p>To balance privacy, performance, and fair use, Sonora provides two transcription options:</p>
+            <h3>Transcription & Service Tiers</h3>
+            <p>Sonora uses cloud-based transcription powered by OpenAI Whisper to convert your voice recordings into text. To balance privacy, performance, and fair use, we offer two subscription tiers:</p>
             <ul>
-                <li><strong>Cloud Transcription:</strong> Limited to <strong>10 minutes per day</strong> per user account. Audio is sent securely for transcription and deleted after processing.</li>
-                <li><strong>Local (On‑Device) Transcription:</strong> <strong>Unlimited</strong>. Audio stays on your iPhone and is processed on‑device.</li>
+                <li><strong>Free Tier:</strong> <strong>60 minutes per month</strong> of cloud transcription. Audio is sent securely via encrypted connection, transcribed, and immediately deleted from our servers after processing.</li>
+                <li><strong>Pro Subscription:</strong> <strong>Unlimited transcription and advanced AI analysis</strong>. Pro subscribers get unrestricted recording time plus enhanced AI features including Thinking Patterns, Cross-memo insights, and Smart action items.</li>
             </ul>
+            <p><em>Note: All transcription is cloud-based. Audio is encrypted in transit, processed securely, and deleted within seconds of transcription completion.</em></p>
+
+            <h3>Pro Subscription & Payment Processing</h3>
+            <p>Sonora offers an optional Pro subscription with additional features and unlimited transcription. Here's how subscriptions work and what data is involved:</p>
+            <ul>
+                <li><strong>Subscription Options:</strong>
+                    <ul>
+                        <li>Monthly: $6.99/month</li>
+                        <li>Annual: $59.99/year (29% savings)</li>
+                    </ul>
+                </li>
+                <li><strong>Payment Processing:</strong> All payments are processed through <strong>Apple's App Store</strong> using your Apple ID. Sonora never sees or stores your payment card information.</li>
+                <li><strong>Subscription Management:</strong> We use <strong>RevenueCat</strong>, a trusted third-party service, to verify your subscription status and manage entitlements across devices. RevenueCat only receives:
+                    <ul>
+                        <li>An anonymous app user identifier (not linked to your Apple ID)</li>
+                        <li>Your subscription status (active/expired/canceled)</li>
+                        <li>The subscription tier you've purchased</li>
+                        <li>Purchase timestamps for entitlement verification</li>
+                    </ul>
+                </li>
+                <li><strong>What We Don't Collect:</strong> We never collect, store, or have access to your:
+                    <ul>
+                        <li>Credit card numbers or payment information</li>
+                        <li>Billing address or personal payment details</li>
+                        <li>Apple ID or email address (unless you contact support)</li>
+                        <li>Purchase history beyond what's needed for subscription verification</li>
+                    </ul>
+                </li>
+                <li><strong>Privacy Protection:</strong> RevenueCat is bound by strict contractual privacy requirements and cannot use your subscription data for advertising, marketing, or any purpose other than providing subscription services to Sonora.</li>
+            </ul>
+            <p>For more information about RevenueCat's privacy practices, visit: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat Privacy Policy</a></p>
 
             <div class="data-flow">
                 <div class="flow-step">
@@ -801,6 +832,69 @@
 
             <h3>Diagnostics (non-tracking)</h3>
             <p>We collect crash reports and basic performance data to improve reliability. This data is <strong>not used for tracking</strong>, <strong>not sold</strong>, and <strong>not linked to your identity</strong>.</p>
+
+            <h3>Calendar & Reminders Access (Optional)</h3>
+            <p>Sonora can optionally help you turn voice memo insights into actionable calendar events and reminders. This feature requires your explicit permission and operates with strong privacy protections:</p>
+            <ul>
+                <li><strong>Permission Required:</strong> iOS will ask for your permission before Sonora can access your Calendar or Reminders. You can decline or revoke this permission anytime in iOS Settings.</li>
+                <li><strong>Write-Only Access:</strong> Sonora uses <strong>write-only</strong> permissions, meaning the app can create new events and reminders but <strong>cannot read your existing calendar</strong> or reminder data. Your existing schedule remains private.</li>
+                <li><strong>User Approval for Each Action:</strong> When Sonora's AI identifies potential events or action items in your voice memos, you must <strong>individually review and approve</strong> each suggested event or reminder before it's added to your calendar. Nothing is added automatically.</li>
+                <li><strong>What Gets Created:</strong>
+                    <ul>
+                        <li>Calendar events with dates, times, and descriptions derived from your voice memo content</li>
+                        <li>Reminders with titles and notes based on AI-detected action items</li>
+                        <li>All created items are standard iOS Calendar/Reminder entries that you fully control</li>
+                    </ul>
+                </li>
+                <li><strong>Local Processing:</strong> Event and reminder detection happens entirely on-device. Your calendar and reminder data never leaves your iPhone.</li>
+                <li><strong>No Data Collection:</strong> Sonora does not collect, store, or transmit any information about:
+                    <ul>
+                        <li>Your existing calendar events or reminders</li>
+                        <li>Event attendees, locations, or details</li>
+                        <li>Calendar metadata or usage patterns</li>
+                        <li>Which events or reminders you approve or decline</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><em>Note: This feature is entirely optional. Sonora works perfectly without Calendar or Reminder access, and declining these permissions does not affect transcription or AI analysis features.</em></p>
+
+            <h3>Personalization Data (Display Name)</h3>
+            <p>Sonora allows you to set an optional display name for a more personalized in-app experience. Here's how it works and what protections are in place:</p>
+            <ul>
+                <li><strong>Completely Optional:</strong> Setting a display name is entirely optional. The app works perfectly without one.</li>
+                <li><strong>Local Storage Only:</strong> Your display name is stored <strong>exclusively on your device</strong> using iOS's secure storage. It is <strong>never uploaded to our servers</strong> or transmitted over the internet.</li>
+                <li><strong>How It's Used:</strong> Your display name is used locally to personalize:
+                    <ul>
+                        <li><strong>In-app greetings:</strong> Messages like "Welcome back, [Name]" within the app interface</li>
+                        <li><strong>Prompt personalization:</strong> Your name may be added to local prompts (e.g., "[Name]'s thoughts") but is <strong>never sent to AI services</strong></li>
+                        <li><strong>Settings displays:</strong> Showing your name in the personalization settings section</li>
+                    </ul>
+                </li>
+                <li><strong>Important Clarification:</strong> Your display name:
+                    <ul>
+                        <li><strong>Does NOT appear in AI-generated summaries, analyses, or transcriptions</strong></li>
+                        <li><strong>Is NOT transmitted to OpenAI or any third-party services</strong></li>
+                        <li><strong>Is NOT included in any network requests or cloud storage</strong></li>
+                        <li>Only affects the local user interface on your device</li>
+                    </ul>
+                </li>
+                <li><strong>Full Control:</strong> You can:
+                    <ul>
+                        <li>Change your display name anytime in Settings → Personalization</li>
+                        <li>Clear it completely to return to anonymous usage</li>
+                        <li>Delete the app to remove all data including your display name</li>
+                    </ul>
+                </li>
+                <li><strong>Privacy Protection:</strong> Because display names stay local, they:
+                    <ul>
+                        <li>Cannot be accessed by our servers or any third parties</li>
+                        <li>Are not included in crash reports, analytics, or logs</li>
+                        <li>Do not sync across devices (each device stores its own independently)</li>
+                        <li>Are deleted when you delete the app or clear app data</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><em>Example: If you set your display name to "Alex", you might see "Welcome back, Alex" in the app — but this name exists only on your iPhone and is never sent anywhere.</em></p>
 
             <h3>Information We Absolutely Do Not Collect</h3>
             <ul>
@@ -884,10 +978,37 @@
             <h2>4. Third-Party Processors</h2>
 
             <h3>Third-Party Processors</h3>
+            <p>Sonora works with carefully selected, privacy-respecting service providers to deliver core functionality. Here's every third-party service we use and what data they process:</p>
             <ul>
-                <li><strong>Hosting:</strong> Our API runs on <strong>Fly.io</strong>; requests are <strong>TLS-encrypted</strong> in transit. Temporary debug logs may be retained for up to <strong>30 days</strong>.</li>
-                <li><strong>AI Analysis:</strong> Transcripts are sent to the <strong>OpenAI API</strong> to generate summaries/themes/action items. Content is sent <strong>over TLS</strong>. We do <strong>not</strong> allow providers to use your data for advertising or model training. Where a provider retains limited logs for abuse monitoring, we restrict that retention to the minimum allowed by the provider and do not link it to you.</li>
+                <li><strong>Hosting:</strong> Our API runs on <strong>Fly.io</strong>; requests are <strong>TLS-encrypted</strong> in transit. Temporary debug logs may be retained for up to <strong>30 days</strong> for troubleshooting purposes.
+                    <ul>
+                        <li>Privacy Policy: <a href="https://fly.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Fly.io Privacy Policy</a></li>
+                    </ul>
+                </li>
+                <li><strong>Transcription:</strong> Audio recordings are sent to <strong>OpenAI Whisper API</strong> for speech-to-text conversion. Audio is transmitted over <strong>TLS encryption</strong> and deleted immediately after transcription.
+                    <ul>
+                        <li><strong>Important:</strong> OpenAI does <strong>not</strong> use your audio or transcripts to train their AI models</li>
+                        <li>OpenAI may retain limited logs for up to 30 days for abuse monitoring and security purposes only</li>
+                        <li>Privacy Policy: <a href="https://openai.com/privacy/" target="_blank" rel="noopener noreferrer">OpenAI Privacy Policy</a></li>
+                    </ul>
+                </li>
+                <li><strong>AI Analysis:</strong> Text transcripts (never audio) are sent to the <strong>OpenAI GPT-4o-mini API</strong> to generate summaries, themes, and action items. Content is sent <strong>over TLS</strong>.
+                    <ul>
+                        <li><strong>Important:</strong> OpenAI does <strong>not</strong> use your transcripts for advertising or model training</li>
+                        <li>Limited retention for abuse monitoring only (30 days maximum)</li>
+                        <li>Zero days retention for API customers (enterprise-level privacy protection)</li>
+                    </ul>
+                </li>
+                <li><strong>Subscription Management:</strong> <strong>RevenueCat</strong> manages Pro subscription verification and entitlements across your devices.
+                    <ul>
+                        <li>Receives: Anonymous app user ID, subscription status, tier purchased, purchase timestamps</li>
+                        <li>Does NOT receive: Payment card info, billing address, Apple ID, email, or personal data</li>
+                        <li><strong>Strict Privacy:</strong> RevenueCat cannot use your data for advertising, marketing, or any purpose other than subscription services</li>
+                        <li>Privacy Policy: <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener noreferrer">RevenueCat Privacy Policy</a></li>
+                    </ul>
+                </li>
             </ul>
+            <p><strong>Contractual Safeguards:</strong> All service providers are bound by data processing agreements requiring privacy compliance, security standards, and prohibition of secondary data use.</p>
 
             <h3>Service Provider Safeguards</h3>
             <p>We only engage trusted service providers under strict data protection terms:</p>
@@ -1030,10 +1151,10 @@
         </section>
 
         <div class="last-updated">
-            <p><strong>Last Updated:</strong> September 7, 2025</p>
+            <p><strong>Last Updated:</strong> November 4, 2025</p>
             <p>This Privacy Policy is effective as of the date listed above and applies to all users of the Sonora app worldwide.</p>
             <p style="margin-top: 1rem; font-style: italic;">
-                Version 1.0 • Crafted with care for your privacy and peace of mind
+                Version 2.0 • Updated to reflect Pro subscriptions, cloud-only transcription, Calendar/Reminders features, and personalization options
             </p>
         </div>
 
